@@ -28,14 +28,16 @@
   .service-table { width:100%; border-collapse: collapse; background:white; border-radius: var(--radius-md); overflow:hidden; border:1px solid var(--border); }
   .service-table th { text-align:left; background: var(--mist); color: var(--navy-900); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.04em; padding: 14px 18px; }
   .service-table td { padding: 16px 18px; border-top: 1px solid var(--border); font-size: 0.94rem; }
-  .service-table td.price { font-weight: 700; color: var(--navy-900); white-space: nowrap; text-align:right; font-family: var(--font-display); font-size: 1.05rem; }
+  .service-table td.price { white-space: nowrap; text-align:right; font-size: 0.88rem; }
+  .service-table td.price a { color: var(--terracotta); font-weight: 700; }
+  .service-table td.price a:hover { color: var(--terracotta-dark); text-decoration: underline; }
   .service-table tr:hover td { background: var(--cream); }
   .service-desc { color: var(--slate-light); font-size: 0.86rem; display:block; margin-top:3px; }
 
   .group-cta { margin-top: 20px; text-align:right; }
 
   .price-note {
-    background: var(--sky-light); border-left: 3px solid var(--sky);
+    background: var(--terracotta-light); border-left: 3px solid var(--terracotta);
     padding: 16px 20px; border-radius: var(--radius-sm); font-size:0.88rem; color: var(--navy-900); margin-bottom: 48px;
   }
 </style>
@@ -92,7 +94,7 @@
   <div class="container">
 
     <div class="price-note">
-      <strong>Nota sul tariffario:</strong> le tariffe riportate sono aggiornate alla revisione più recente della Carta dei Servizi. Per eventuali variazioni, contatta la segreteria.
+      <strong>Nota sul tariffario:</strong> le tariffe sono in fase di aggiornamento. Per conoscere il costo di una prestazione, contatta la segreteria: ti risponderemo con tutte le informazioni necessarie.
     </div>
 
     <div class="filter-bar" id="service-filter">
@@ -115,19 +117,19 @@
         <h2>Cardiologia</h2>
       </div>
       <table class="service-table">
-        <thead><tr><th>Prestazione</th><th style="text-align:right">Tariffa</th></tr></thead>
+        <thead><tr><th>Prestazione</th><th style="text-align:right">Info</th></tr></thead>
         <tbody>
-          <tr><td>Visita Cardiologica</td><td class="price">€ 40,00</td></tr>
-          <tr><td>Elettrocardiogramma</td><td class="price">€ 40,00</td></tr>
-          <tr><td>Visita Cardiologica + ECG</td><td class="price">€ 40,00</td></tr>
-          <tr><td>Ecocardiogramma (Ecografia Cardiaca)</td><td class="price">€ 88,00</td></tr>
-          <tr><td>Ecocolordoppler Cardiaco (ECO Cardiaco)</td><td class="price">€ 80,00</td></tr>
-          <tr><td>Visita Cardiologica, ECG, Ecocolordoppler<span class="service-desc">Pacchetto completo</span></td><td class="price">€ 120,00</td></tr>
-          <tr><td>Ecocolordoppler Tronchi Sovraortici</td><td class="price">€ 40,00</td></tr>
-          <tr><td>Ecocolordoppler Venoso Arti Inferiori</td><td class="price">€ 98,00</td></tr>
-          <tr><td>Ecocolordoppler Artero Venoso Arti Inferiori</td><td class="price">€ 98,00</td></tr>
-          <tr><td>Holter Cardiaco 24H</td><td class="price">€ 70,00</td></tr>
-          <tr><td>Holter Pressorio 24H</td><td class="price">€ 70,00</td></tr>
+          <tr><td>Visita Cardiologica</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Elettrocardiogramma</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Visita Cardiologica + ECG</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecocardiogramma (Ecografia Cardiaca)</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecocolordoppler Cardiaco (ECO Cardiaco)</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Visita Cardiologica, ECG, Ecocolordoppler<span class="service-desc">Pacchetto completo</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecocolordoppler Tronchi Sovraortici</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecocolordoppler Venoso Arti Inferiori</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecocolordoppler Artero Venoso Arti Inferiori</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Holter Cardiaco 24H</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Holter Pressorio 24H</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
       <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Cardiologia">Prenota Cardiologia</a></div>
@@ -140,12 +142,12 @@
         <h2>Endocrinologia e Dietologia</h2>
       </div>
       <table class="service-table">
-        <thead><tr><th>Prestazione</th><th style="text-align:right">Tariffa</th></tr></thead>
+        <thead><tr><th>Prestazione</th><th style="text-align:right">Info</th></tr></thead>
         <tbody>
-          <tr><td>Visita Endocrinologica<span class="service-desc">Valutazione di tiroide, metabolismo, diabete e disturbi ormonali</span></td><td class="price">€ 100,00</td></tr>
-          <tr><td>Ecografia Tiroidea e Linfonodi del Collo</td><td class="price">€ 60,00</td></tr>
-          <tr><td>Ecografia Paratiroidi</td><td class="price">€ 60,00</td></tr>
-          <tr><td>Ecografia Surrenalica</td><td class="price">€ 60,00</td></tr>
+          <tr><td>Visita Endocrinologica<span class="service-desc">Valutazione di tiroide, metabolismo, diabete e disturbi ormonali</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecografia Tiroidea e Linfonodi del Collo</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecografia Paratiroidi</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecografia Surrenalica</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
       <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Endocrinologia e Dietologia">Prenota Endocrinologia</a></div>
@@ -158,9 +160,9 @@
         <h2>Nutrizionistica</h2>
       </div>
       <table class="service-table">
-        <thead><tr><th>Prestazione</th><th style="text-align:right">Tariffa</th></tr></thead>
+        <thead><tr><th>Prestazione</th><th style="text-align:right">Info</th></tr></thead>
         <tbody>
-          <tr><td>Consulenza Nutrizionistica<span class="service-desc">Anamnesi alimentare, valutazione antropometrica e piano personalizzato</span></td><td class="price">€ 100,00</td></tr>
+          <tr><td>Consulenza Nutrizionistica<span class="service-desc">Anamnesi alimentare, valutazione antropometrica e piano personalizzato</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
       <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Nutrizionistica">Prenota Nutrizionistica</a></div>
@@ -173,13 +175,13 @@
         <h2>Ortopedia</h2>
       </div>
       <table class="service-table">
-        <thead><tr><th>Prestazione</th><th style="text-align:right">Tariffa</th></tr></thead>
+        <thead><tr><th>Prestazione</th><th style="text-align:right">Info</th></tr></thead>
         <tbody>
-          <tr><td>Visita Ortopedica</td><td class="price">€ 80,00</td></tr>
-          <tr><td>Infiltrazioni Articolari</td><td class="price">€ 80,00</td></tr>
-          <tr><td>Ecografia Articolare<span class="service-desc">Spalla, ginocchio, anca, gomito, polso, caviglia</span></td><td class="price">€ 60,00</td></tr>
-          <tr><td>Ecografia Muscolo-Tendinea</td><td class="price">€ 60,00</td></tr>
-          <tr><td>Ecografia delle Parti Molli</td><td class="price">€ 60,00</td></tr>
+          <tr><td>Visita Ortopedica</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Infiltrazioni Articolari</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecografia Articolare<span class="service-desc">Spalla, ginocchio, anca, gomito, polso, caviglia</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecografia Muscolo-Tendinea</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecografia delle Parti Molli</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
       <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Ortopedia">Prenota Ortopedia</a></div>
@@ -192,9 +194,9 @@
         <h2>Osteopatia</h2>
       </div>
       <table class="service-table">
-        <thead><tr><th>Prestazione</th><th style="text-align:right">Tariffa</th></tr></thead>
+        <thead><tr><th>Prestazione</th><th style="text-align:right">Info</th></tr></thead>
         <tbody>
-          <tr><td>Consulenza Osteopatica<span class="service-desc">Valutazione posturale e trattamento manipolativo</span></td><td class="price">€ 100,00</td></tr>
+          <tr><td>Consulenza Osteopatica<span class="service-desc">Valutazione posturale e trattamento manipolativo</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
       <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Osteopatia">Prenota Osteopatia</a></div>
@@ -207,10 +209,10 @@
         <h2>Otorinolaringoiatria</h2>
       </div>
       <table class="service-table">
-        <thead><tr><th>Prestazione</th><th style="text-align:right">Tariffa</th></tr></thead>
+        <thead><tr><th>Prestazione</th><th style="text-align:right">Info</th></tr></thead>
         <tbody>
-          <tr><td>Visita Otorinolaringoiatrica</td><td class="price">€ 80,00</td></tr>
-          <tr><td>Lavaggio Auricolare</td><td class="price">€ 80,00</td></tr>
+          <tr><td>Visita Otorinolaringoiatrica</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Lavaggio Auricolare</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
       <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Otorinolaringoiatria">Prenota Otorino</a></div>
@@ -223,12 +225,12 @@
         <h2>Ematologia</h2>
       </div>
       <table class="service-table">
-        <thead><tr><th>Prestazione</th><th style="text-align:right">Tariffa</th></tr></thead>
+        <thead><tr><th>Prestazione</th><th style="text-align:right">Info</th></tr></thead>
         <tbody>
-          <tr><td>Visita Ematologica</td><td class="price">€ 120,00</td></tr>
-          <tr><td>Ecografia Addome Completo<span class="service-desc">Milza, fegato, linfonodi</span></td><td class="price">€ 110,00</td></tr>
-          <tr><td>Ecografia Linfonodale<span class="service-desc">Laterocervicale, ascellare, inguinale, addominale</span></td><td class="price">€ 60,00</td></tr>
-          <tr><td>Ecocolordoppler Venoso<span class="service-desc">Screening trombosi</span></td><td class="price">€ 98,00</td></tr>
+          <tr><td>Visita Ematologica</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecografia Addome Completo<span class="service-desc">Milza, fegato, linfonodi</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecografia Linfonodale<span class="service-desc">Laterocervicale, ascellare, inguinale, addominale</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecocolordoppler Venoso<span class="service-desc">Screening trombosi</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
       <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Ematologia">Prenota Ematologia</a></div>
@@ -241,10 +243,10 @@
         <h2>Reumatologia</h2>
       </div>
       <table class="service-table">
-        <thead><tr><th>Prestazione</th><th style="text-align:right">Tariffa</th></tr></thead>
+        <thead><tr><th>Prestazione</th><th style="text-align:right">Info</th></tr></thead>
         <tbody>
-          <tr><td>Visita Reumatologica</td><td class="price">€ 80,00</td></tr>
-          <tr><td>Ecografia Articolare Multidistrettuale<span class="service-desc">Mani, polsi, piedi, ginocchia, spalle</span></td><td class="price">€ 70,00</td></tr>
+          <tr><td>Visita Reumatologica</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Ecografia Articolare Multidistrettuale<span class="service-desc">Mani, polsi, piedi, ginocchia, spalle</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
       <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Reumatologia">Prenota Reumatologia</a></div>
@@ -257,12 +259,12 @@
         <h2>Medicina del Lavoro</h2>
       </div>
       <table class="service-table">
-        <thead><tr><th>Prestazione</th><th style="text-align:right">Tariffa</th></tr></thead>
+        <thead><tr><th>Prestazione</th><th style="text-align:right">Info</th></tr></thead>
         <tbody>
-          <tr><td>Sorveglianza Sanitaria<span class="service-desc">Visita medica ai sensi D.Lgs. 81/08</span></td><td class="price">€ 80,00</td></tr>
-          <tr><td>Spirometria</td><td class="price">€ 40,00</td></tr>
-          <tr><td>Test Tossicologici<span class="service-desc">Su urine, kit 10 parametri</span></td><td class="price">€ 50,00</td></tr>
-          <tr><td>Convenzioni aziendali<span class="service-desc">Tariffe dedicate per pacchetti aziendali: contatta la segreteria</span></td><td class="price">Su richiesta</td></tr>
+          <tr><td>Sorveglianza Sanitaria<span class="service-desc">Visita medica ai sensi D.Lgs. 81/08</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Spirometria</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Test Tossicologici<span class="service-desc">Su urine, kit 10 parametri</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
+          <tr><td>Convenzioni aziendali<span class="service-desc">Tariffe dedicate per pacchetti aziendali: contatta la segreteria</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
       <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Medicina del Lavoro">Prenota Medicina del Lavoro</a></div>
@@ -275,7 +277,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="logo-link">
-        <div class="logo-placeholder"><img src="images/logo-icon.png" alt="Logo Poliambulatorio Delta"></div>
+        <div class="logo-placeholder"><img src="images/logo-full.png" alt="Logo Poliambulatorio Delta"></div>
         <div class="logo-text">Poliambulatorio Delta<span>Catania</span></div>
       </div>
       <p>Nove specialistiche mediche in un'unica sede a Catania. Controlli sinergici, senza tempi di attesa.</p>
