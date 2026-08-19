@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contatti e Prenotazioni | Poliambulatorio Delta Catania</title>
+<meta name="description" content="Contatta il Poliambulatorio Delta a Catania: Viale Marco Polo 2. Prenota su WhatsApp o invia una richiesta di informazioni tramite il nostro modulo.">
+<link rel="canonical" href="https://www.poliambulatoriodelta.it/contatti.html">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .contact-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items:start; }
+  .contact-form { background:white; border:1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display:block; font-size:0.85rem; font-weight:600; color: var(--petrol-900); margin-bottom:7px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width:100%; padding: 12px 14px; border:1px solid var(--border); border-radius: var(--radius-sm);
+    font-family: inherit; font-size: 0.95rem; background: var(--cream); color: var(--slate);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { background: white; }
+  .form-required { color: var(--terracotta); }
+  #form-feedback { display:none; padding: 14px 16px; border-radius: var(--radius-sm); font-size: 0.88rem; margin-bottom: 18px; }
+
+  .contact-card-list { display:flex; flex-direction:column; gap:16px; margin-bottom:32px; }
+  .contact-quick-card { background:white; border:1px solid var(--border); border-radius: var(--radius-md); padding:20px 22px; display:flex; gap:16px; align-items:flex-start; }
+  .contact-quick-card .icon { width:44px; height:44px; border-radius:var(--radius-sm); background:var(--sage); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .contact-quick-card .icon svg { width:22px; height:22px; color:var(--petrol-800); }
+  .contact-quick-card strong { display:block; color:var(--petrol-900); margin-bottom:3px; }
+  .contact-quick-card span, .contact-quick-card a { font-size:0.9rem; color: var(--slate-light); }
+  .contact-quick-card a { color: var(--terracotta); font-weight:600; }
+
+  .wa-highlight { background: #25D366; border-radius: var(--radius-lg); padding: 28px; color:white; margin-bottom:32px; display:flex; gap:18px; align-items:center; }
+  .wa-highlight svg { width:40px; height:40px; flex-shrink:0; }
+  .wa-highlight h3 { color:white; font-size:1.1rem; margin-bottom:6px; }
+  .wa-highlight p { color:rgba(255,255,255,0.9); font-size:0.88rem; margin-bottom:14px; }
+  .wa-highlight .btn { background:white; color:#128C4A; }
+
+  @media (max-width: 900px){ .contact-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link">
+      <div class="logo-placeholder"><img src="images/logo-icon.png" alt="Logo Poliambulatorio Delta"></div>
+      <div class="logo-text">Poliambulatorio<span>Delta · Catania</span></div>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prestazioni.html">Prestazioni</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="struttura.html">Struttura</a></li>
+        <li><a href="contatti.html" class="active">Contatti</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a href="contatti.html#prenota" class="btn btn-primary header-cta-desktop">Prenota ora</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav">
+  <div class="mobile-nav-top">
+    <div class="logo-text" style="color:white">Poliambulatorio Delta</div>
+    <button class="mobile-nav-close" aria-label="Chiudi menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="prestazioni.html">Prestazioni</a></li>
+    <li><a href="staff.html">Staff</a></li>
+    <li><a href="struttura.html">Struttura</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
+  <a href="contatti.html#prenota" class="btn btn-primary">Prenota ora</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Contatti</div>
+    <span class="eyebrow">Parliamone</span>
+    <h1>Contatti e prenotazioni</h1>
+    <p>Il modo più veloce per prenotare è scriverci su WhatsApp. Per qualsiasi altra informazione, usa il modulo qui sotto.</p>
+  </div>
+</section>
+
+<section class="section" id="prenota">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div>
+        <div class="wa-highlight">
+          <svg viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.83 14.13c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11a16 16 0 0 1-1.61-.6c-2.83-1.22-4.68-4.06-4.82-4.25-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.35.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.24.57.82 1.96.89 2.1.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+          <div>
+            <h3>Prenota in tempo reale su WhatsApp</h3>
+            <p>Il canale più rapido: ti rispondiamo con la prima disponibilità utile.</p>
+            <a href="#" class="btn btn-sm" data-wa-message="Salve, vorrei prenotare una visita presso il Poliambulatorio Delta. Potete indicarmi la prima disponibilità?">Apri WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="contact-card-list">
+          <div class="contact-quick-card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><strong>Indirizzo</strong><span>Viale Marco Polo, 2 — 95126 Catania (CT)</span></div>
+          </div>
+          <div class="contact-quick-card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><strong>Telefono fisso</strong><a href="tel:+390952904796">095 2904796</a></div>
+          </div>
+          <div class="contact-quick-card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></div>
+            <div><strong>Email</strong><a href="mailto:segreteria@poliambulatoriodelta.it">segreteria@poliambulatoriodelta.it</a></div>
+          </div>
+          <div class="contact-quick-card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div><strong>Orari</strong><span>Lun · Mer · Ven 9:00–13:00<br>Mar · Gio 16:00–19:00</span></div>
+          </div>
+        </div>
+
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=Viale+Marco+Polo+2,+95126+Catania+CT&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mappa Poliambulatorio Delta">
+          </iframe>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-form">
+          <h2 style="font-size:1.5rem; margin-bottom:8px;">Richiedi informazioni</h2>
+          <p style="font-size:0.9rem; margin-bottom:24px;">Compila il modulo: genereremo automaticamente un messaggio WhatsApp pronto da inviarci con i tuoi dati.</p>
+
+          <div id="form-feedback"></div>
+
+          <form id="info-form">
+            <div class="form-group">
+              <label for="f-nome">Nome e cognome <span class="form-required">*</span></label>
+              <input type="text" id="f-nome" name="nome" required placeholder="Es. Maria Rossi">
+            </div>
+            <div class="form-group">
+              <label for="f-telefono">Telefono <span class="form-required">*</span></label>
+              <input type="tel" id="f-telefono" name="telefono" required placeholder="Es. 333 1234567">
+            </div>
+            <div class="form-group">
+              <label for="f-branca">Specialistica di interesse</label>
+              <select id="f-branca" name="branca">
+                <option value="">Seleziona (facoltativo)</option>
+                <option value="Cardiologia">Cardiologia</option>
+                <option value="Endocrinologia e Dietologia">Endocrinologia e Dietologia</option>
+                <option value="Nutrizionistica">Nutrizionistica</option>
+                <option value="Ortopedia">Ortopedia</option>
+                <option value="Osteopatia">Osteopatia</option>
+                <option value="Otorinolaringoiatria">Otorinolaringoiatria</option>
+                <option value="Ematologia">Ematologia</option>
+                <option value="Reumatologia">Reumatologia</option>
+                <option value="Medicina del Lavoro">Medicina del Lavoro</option>
+                <option value="Non so, vorrei informazioni generali">Non so, vorrei informazioni generali</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-messaggio">Messaggio</label>
+              <textarea id="f-messaggio" name="messaggio" placeholder="Scrivi qui la tua richiesta..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.83 14.13c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11a16 16 0 0 1-1.61-.6c-2.83-1.22-4.68-4.06-4.82-4.25-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.35.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.24.57.82 1.96.89 2.1.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+              Invia richiesta su WhatsApp
+            </button>
+            <p style="font-size:0.78rem; color:var(--slate-light); margin-top:14px; text-align:center;">
+              Inviando il modulo si aprirà WhatsApp con un messaggio già pronto: basterà premere invia.
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-link">
+        <div class="logo-placeholder"><img src="images/logo-icon.png" alt="Logo Poliambulatorio Delta"></div>
+        <div class="logo-text">Poliambulatorio<span>Delta · Catania</span></div>
+      </div>
+      <p>Nove specialistiche mediche in un'unica sede a Catania. Controlli sinergici, senza tempi di attesa.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Naviga</h4>
+      <ul><li><a href="prestazioni.html">Prestazioni</a></li><li><a href="staff.html">Staff medico</a></li><li><a href="struttura.html">La struttura</a></li><li><a href="blog.html">Blog</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Specialistiche</h4>
+      <ul><li><a href="prestazioni.html#cardiologia">Cardiologia</a></li><li><a href="prestazioni.html#ortopedia">Ortopedia</a></li><li><a href="prestazioni.html#otorino">Otorinolaringoiatria</a></li><li><a href="prestazioni.html">Tutte le branche →</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contatti</h4>
+      <ul><li>Viale Marco Polo, 2 — 95126 Catania</li><li>segreteria@poliambulatoriodelta.it</li><li>Lun/Mer/Ven 9:00–13:00</li><li>Mar/Gio 16:00–19:00</li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Poliambulatorio Delta — P.IVA 06156260876</span>
+    <span><a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></span>
+  </div>
+</footer>
+
+<a href="#" class="wa-float" aria-label="Prenota su WhatsApp" data-wa-message="Salve, vorrei prenotare una visita presso il Poliambulatorio Delta. Potete indicarmi la prima disponibilità?">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.83 14.13c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11a16 16 0 0 1-1.61-.6c-2.83-1.22-4.68-4.06-4.82-4.25-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.35.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.24.57.82 1.96.89 2.1.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>
