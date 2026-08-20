@@ -34,12 +34,27 @@
   .service-table tr:hover td { background: var(--cream); }
   .service-desc { color: var(--slate-light); font-size: 0.86rem; display:block; margin-top:3px; }
 
-  .group-cta { margin-top: 20px; text-align:right; }
+  .group-cta { margin-top: 20px; display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; }
+  .info-btn { display:inline-flex; align-items:center; gap:6px; }
+  .info-btn svg { width:16px; height:16px; }
 
   .price-note {
     background: var(--terracotta-light); border-left: 3px solid var(--terracotta);
     padding: 16px 20px; border-radius: var(--radius-sm); font-size:0.88rem; color: var(--navy-900); margin-bottom: 48px;
   }
+
+  /* Popup "Come prepararsi" */
+  .info-modal { position:fixed; inset:0; background:rgba(0,20,33,0.55); z-index:400; display:none; align-items:center; justify-content:center; padding:20px; }
+  .info-modal.open { display:flex; }
+  .info-modal-box { background:var(--white); border-radius:var(--radius-lg); padding:32px; max-width:480px; width:100%; max-height:85vh; overflow-y:auto; box-shadow:var(--shadow-lg); position:relative; }
+  .info-modal-close { position:absolute; top:16px; right:16px; width:34px; height:34px; border-radius:50%; border:none; background:var(--mist); color:var(--navy-900); font-size:1.3rem; line-height:1; }
+  .info-modal-close:hover { background:var(--mist-dark); }
+  .info-modal-box .info-modal-eyebrow { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--terracotta); display:block; margin-bottom:8px; }
+  .info-modal-box h3 { font-size:1.25rem; margin-bottom:18px; padding-right:30px; }
+  .info-modal-box ul { margin:0; padding-left:20px; list-style:disc; }
+  .info-modal-box li { font-size:0.92rem; line-height:1.55; color:var(--slate); margin-bottom:11px; }
+  .info-modal-box li:last-child { margin-bottom:0; }
+  .info-modal-box li::marker { color:var(--terracotta); }
 </style>
 </head>
 <body>
@@ -134,7 +149,10 @@
           <tr><td>Holter Pressorio 24H</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
-      <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Cardiologia">Prenota Cardiologia</a></div>
+      <div class="group-cta">
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="cardiologia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>Come prepararsi</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Cardiologia">Prenota Cardiologia</a>
+      </div>
     </div>
 
     <!-- ENDOCRINOLOGIA -->
@@ -152,7 +170,10 @@
           <tr><td>Ecografia Surrenalica</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
-      <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Endocrinologia e Dietologia">Prenota Endocrinologia</a></div>
+      <div class="group-cta">
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="endocrinologia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>Come prepararsi</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Endocrinologia e Dietologia">Prenota Endocrinologia</a>
+      </div>
     </div>
 
     <!-- NUTRIZIONISTICA -->
@@ -167,7 +188,10 @@
           <tr><td>Consulenza Nutrizionistica<span class="service-desc">Anamnesi alimentare, valutazione antropometrica e piano personalizzato</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
-      <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Nutrizionistica">Prenota Nutrizionistica</a></div>
+      <div class="group-cta">
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="nutrizionistica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>Come prepararsi</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Nutrizionistica">Prenota Nutrizionistica</a>
+      </div>
     </div>
 
     <!-- ORTOPEDIA -->
@@ -186,7 +210,10 @@
           <tr><td>Ecografia delle Parti Molli</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
-      <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Ortopedia">Prenota Ortopedia</a></div>
+      <div class="group-cta">
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="ortopedia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>Come prepararsi</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Ortopedia">Prenota Ortopedia</a>
+      </div>
     </div>
 
     <!-- OSTEOPATIA -->
@@ -201,7 +228,10 @@
           <tr><td>Consulenza Osteopatica<span class="service-desc">Valutazione posturale e trattamento manipolativo</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
-      <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Osteopatia">Prenota Osteopatia</a></div>
+      <div class="group-cta">
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="osteopatia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>Come prepararsi</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Osteopatia">Prenota Osteopatia</a>
+      </div>
     </div>
 
     <!-- OTORINO -->
@@ -217,7 +247,10 @@
           <tr><td>Lavaggio Auricolare</td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
-      <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Otorinolaringoiatria">Prenota Otorino</a></div>
+      <div class="group-cta">
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="otorino"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>Come prepararsi</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Otorinolaringoiatria">Prenota Otorino</a>
+      </div>
     </div>
 
     <!-- EMATOLOGIA -->
@@ -235,7 +268,10 @@
           <tr><td>Ecocolordoppler Venoso<span class="service-desc">Screening trombosi</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
-      <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Ematologia">Prenota Ematologia</a></div>
+      <div class="group-cta">
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="ematologia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>Come prepararsi</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Ematologia">Prenota Ematologia</a>
+      </div>
     </div>
 
     <!-- REUMATOLOGIA -->
@@ -251,7 +287,10 @@
           <tr><td>Ecografia Articolare Multidistrettuale<span class="service-desc">Mani, polsi, piedi, ginocchia, spalle</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
-      <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Reumatologia">Prenota Reumatologia</a></div>
+      <div class="group-cta">
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="reumatologia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>Come prepararsi</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Reumatologia">Prenota Reumatologia</a>
+      </div>
     </div>
 
     <!-- MEDICINA DEL LAVORO -->
@@ -269,7 +308,10 @@
           <tr><td>Convenzioni aziendali<span class="service-desc">Tariffe dedicate per pacchetti aziendali: contatta la segreteria</span></td><td class="price"><a href="contatti.html#prenota">Contattaci per info</a></td></tr>
         </tbody>
       </table>
-      <div class="group-cta"><a href="#" class="btn btn-sm btn-primary" data-wa-branch="Medicina del Lavoro">Prenota Medicina del Lavoro</a></div>
+      <div class="group-cta">
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="medicina-lavoro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>Come prepararsi</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Medicina del Lavoro">Prenota Medicina del Lavoro</a>
+      </div>
     </div>
 
   </div>
@@ -306,6 +348,145 @@
 <a href="#" class="wa-float" aria-label="Prenota su WhatsApp" data-wa-message="Salve, vorrei prenotare una visita presso il Poliambulatorio Delta. Potete indicarmi la prima disponibilità?">
   <svg viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.83 14.13c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11a16 16 0 0 1-1.61-.6c-2.83-1.22-4.68-4.06-4.82-4.25-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.35.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.24.57.82 1.96.89 2.1.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.35z"/></svg>
 </a>
+
+<!-- POPUP "COME PREPARARSI" -->
+<div class="info-modal" id="info-modal">
+  <div class="info-modal-box">
+    <button type="button" class="info-modal-close" aria-label="Chiudi">&times;</button>
+    <span class="info-modal-eyebrow">Come prepararsi</span>
+    <h3 id="info-modal-title"></h3>
+    <div id="info-modal-body"></div>
+  </div>
+</div>
+
+<script>
+  // Indicazioni di preparazione per branca — BOZZA da confermare con la segreteria
+  const PREP_INFO = {
+    cardiologia: {
+      titolo: 'Cardiologia',
+      testo: [
+        "Non è richiesta una preparazione specifica.",
+        "Indossa abiti comodi, facili da togliere per il posizionamento degli elettrodi.",
+        "Evita creme o oli sulla pelle del torace il giorno dell'esame.",
+        "Se è previsto un ECG, evita caffè, fumo e sforzi fisici intensi nell'ora precedente, per non alterare il tracciato.",
+        "Per ECG e Holter, se possibile, rimuovi i peli dall'area del petto.",
+        "Porta con te l'elenco dei farmaci che assumi ed eventuali ECG o ecocardiogrammi precedenti, per un confronto.",
+        "Segnala se assumi farmaci anticoagulanti.",
+        "Riferisci eventuali casi di patologie cardiache in famiglia."
+      ]
+    },
+    endocrinologia: {
+      titolo: 'Endocrinologia e Dietologia',
+      testo: [
+        "Per il prelievo del sangue è richiesto il digiuno da almeno 8 ore.",
+        "Per le ecografie (tiroide, paratiroidi, surrenali) non è necessaria una preparazione specifica.",
+        "Continua la normale assunzione dei farmaci, salvo diversa indicazione, ma segnalali tutti — in particolare terapie ormonali o per la tiroide.",
+        "Per la curva da carico di glucosio, segui le istruzioni specifiche del laboratorio (digiuno più rigido).",
+        "Porta con te gli esami ormonali precedenti.",
+        "Segnala un'eventuale gravidanza in corso."
+      ]
+    },
+    nutrizionistica: {
+      titolo: 'Nutrizionistica',
+      testo: [
+        "Non è richiesta una preparazione specifica.",
+        "Se disponibile, porta un diario alimentare delle ultime settimane.",
+        "Pesati possibilmente a digiuno e con abbigliamento leggero la mattina della visita.",
+        "Porta gli esami del sangue più recenti (glicemia, colesterolo, trigliceridi).",
+        "Segnala allergie e intolleranze alimentari.",
+        "Evita di modificare drasticamente la dieta nei giorni prima della prima visita, per non falsare la valutazione iniziale."
+      ]
+    },
+    ortopedia: {
+      titolo: 'Ortopedia',
+      testo: [
+        "Non è richiesta una preparazione specifica.",
+        "Indossa capi comodi che permettano di scoprire facilmente la zona da esaminare (es. pantaloncini per ginocchio o anca).",
+        "Porta con te l'elenco degli antidolorifici assunti.",
+        "Porta eventuali esami di imaging precedenti (radiografie, risonanze, ecografie).",
+        "Annota data e dinamica di eventuali traumi recenti."
+      ]
+    },
+    osteopatia: {
+      titolo: 'Osteopatia',
+      testo: [
+        "Indossa abiti comodi che permettano di muoverti liberamente durante il trattamento.",
+        "Evita sforzi fisici intensi appena prima della seduta.",
+        "Evita pasti abbondanti nelle ore immediatamente precedenti.",
+        "Segnala interventi chirurgici, fratture o una gravidanza in corso."
+      ]
+    },
+    otorino: {
+      titolo: 'Otorinolaringoiatria',
+      testo: [
+        "Non è richiesta una preparazione specifica per la visita.",
+        "Evita di pulire in profondità le orecchie (bastoncini cotonati) nei giorni precedenti, per non rimuovere segni utili alla diagnosi.",
+        "Se è previsto un esame audiometrico, evita l'esposizione a rumori forti nelle 24-48 ore precedenti.",
+        "Porta eventuali audiometrie o esami ORL passati.",
+        "Segnala otiti in corso o perforazioni del timpano già diagnosticate."
+      ]
+    },
+    ematologia: {
+      titolo: 'Ematologia',
+      testo: [
+        "Per il prelievo del sangue è richiesto il digiuno da almeno 8-12 ore.",
+        "Durante il digiuno è comunque consentita l'acqua: resta ben idratato.",
+        "Evita attività fisica intensa prima del prelievo.",
+        "Segnala l'uso di anticoagulanti o antiaggreganti.",
+        "Porta con te gli emocromi o esami ematologici precedenti."
+      ]
+    },
+    reumatologia: {
+      titolo: 'Reumatologia',
+      testo: [
+        "Non è richiesta una preparazione specifica per la visita.",
+        "Porta eventuali radiografie o risonanze.",
+        "Annota quali articolazioni fanno male e da quanto tempo, inclusa la durata della rigidità mattutina.",
+        "Elenca i farmaci assunti, in particolare antinfiammatori o cortisonici."
+      ]
+    },
+    'medicina-lavoro': {
+      titolo: 'Medicina del Lavoro',
+      testo: [
+        "Segui le eventuali indicazioni specifiche fornite per la tua mansione o dal datore di lavoro.",
+        "Porta un documento d'identità valido ed eventuali certificati di idoneità precedenti.",
+        "Se è prevista la spirometria, evita di fumare nelle ore precedenti.",
+        "Se è previsto un esame audiometrico, evita l'esposizione a rumori forti nelle ore precedenti.",
+        "Segnala malattie recenti che potrebbero influire sulla valutazione di idoneità.",
+        "Per i test tossicologici su urine, chiedi conferma alla segreteria al momento della prenotazione."
+      ]
+    }
+  };
+
+  function initInfoModal() {
+    const modal = document.getElementById('info-modal');
+    const title = document.getElementById('info-modal-title');
+    const body = document.getElementById('info-modal-body');
+    if (!modal) return;
+
+    function open(key) {
+      const data = PREP_INFO[key];
+      if (!data) return;
+      title.textContent = data.titolo;
+      body.innerHTML = '<ul>' + data.testo.map(p => `<li>${p}</li>`).join('') + '</ul>';
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.info-btn').forEach(btn => {
+      btn.addEventListener('click', () => open(btn.getAttribute('data-info')));
+    });
+    modal.querySelector('.info-modal-close').addEventListener('click', close);
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+  }
+
+  document.addEventListener('DOMContentLoaded', initInfoModal);
+</script>
 
 <script src="js/main.js"></script>
 </body>
