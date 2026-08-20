@@ -176,12 +176,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 22px;
 }
 
 .main-nav ul {
   display: flex;
-  gap: 28px;
+  gap: 21px;
 }
 
 .main-nav a {

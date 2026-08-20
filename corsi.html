@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corsi ed Eventi | Poliambulatorio Delta Catania</title>
+<meta name="description" content="Corso BLSD, Primo Soccorso e Primo Soccorso Domestico a Catania: scopri i corsi organizzati dal Poliambulatorio Delta e gli eventi in programma nella sala corsi. Calendario aggiornato degli appuntamenti.">
+<link rel="canonical" href="https://www.poliambulatoriodelta.it/corsi.html">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero-corsi { position: relative; overflow: hidden; }
+  .page-hero-pulse { position: absolute; left: 0; right: 0; bottom: -4px; width: 100%; height: 56px; opacity: .16; }
+  .page-hero-cta { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .courses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .course-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 28px; display: flex; flex-direction: column; transition: transform .22s, box-shadow .22s, border-color .22s; }
+  .course-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--terracotta); }
+  .course-icon { width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--mist); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .course-icon svg { width: 28px; height: 28px; color: var(--navy-800); }
+  .course-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+  .course-card p { font-size: 0.92rem; flex-grow: 1; margin-bottom: 22px; }
+
+  /* Prossimi appuntamenti */
+  .agenda-list { display: flex; flex-direction: column; gap: 16px; max-width: 820px; margin: 0 auto; }
+  .agenda-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px 26px; display: flex; align-items: center; gap: 22px; box-shadow: var(--shadow-sm); flex-wrap: wrap; }
+  .agenda-date { display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--navy-900); color: var(--white); border-radius: var(--radius-md); width: 74px; height: 74px; flex-shrink: 0; }
+  .agenda-day { font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; line-height: 1; }
+  .agenda-month { font-size: 0.7rem; text-transform: uppercase; letter-spacing: .05em; margin-top: 2px; }
+  .agenda-body { flex: 1; min-width: 220px; }
+  .agenda-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 3px 10px; border-radius: 999px; margin-bottom: 8px; }
+  .agenda-badge-corso { color: var(--navy-900); background: var(--navy-100); }
+  .agenda-badge-evento { color: var(--terracotta-dark); background: var(--terracotta-light); }
+  .agenda-body h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .agenda-body p { font-size: 0.88rem; color: var(--slate); margin-bottom: 6px; }
+  .agenda-meta { font-size: 0.8rem; color: var(--slate-light); }
+  .agenda-empty { text-align: center; padding: 40px 20px; color: var(--slate-light); background: var(--white); border: 1px dashed var(--border); border-radius: var(--radius-lg); }
+
+  /* Calendario */
+  .calendar-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); max-width: 720px; margin: 0 auto; }
+  .calendar-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+  .calendar-header h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--navy-900); text-transform: capitalize; }
+  .cal-nav-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--white); display: flex; align-items: center; justify-content: center; color: var(--navy-900); transition: background .2s; flex-shrink: 0; }
+  .cal-nav-btn:hover { background: var(--mist); }
+  .cal-nav-btn svg { width: 18px; height: 18px; }
+  .calendar-weekdays, .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .calendar-weekdays span { text-align: center; font-size: 0.72rem; font-weight: 700; color: var(--slate-light); text-transform: uppercase; padding-bottom: 8px; display: block; }
+  .cal-day { aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate); gap: 3px; }
+  .cal-day-empty { visibility: hidden; }
+  .cal-day-active { background: var(--mist); font-weight: 700; color: var(--navy-900); }
+  .cal-dots { display: flex; gap: 3px; }
+  .cal-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+  .cal-dot-corso { background: var(--navy-800); }
+  .cal-dot-evento { background: var(--terracotta); }
+  .calendar-legend { display: flex; gap: 24px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+  .calendar-legend span { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--slate); }
+  .calendar-legend .cal-dot { width: 9px; height: 9px; }
+
+  /* Eventi sala corsi */
+  .eventi-empty { text-align: center; padding: 48px 24px; background: var(--white); border: 1px dashed var(--border); border-radius: var(--radius-lg); max-width: 600px; margin: 0 auto; }
+  .eventi-empty p { margin-bottom: 20px; }
+  .eventi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .evento-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .evento-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+  .evento-card-body { padding: 22px 24px; }
+
+  @media (max-width: 980px) {
+    .courses-grid { grid-template-columns: repeat(2, 1fr); }
+    .eventi-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .courses-grid { grid-template-columns: 1fr; }
+    .calendar-card { padding: 22px 14px; }
+    .cal-day { font-size: 0.72rem; }
+    .calendar-weekdays span { font-size: 0.62rem; }
+    .agenda-item { flex-direction: column; align-items: flex-start; text-align: left; }
+    .agenda-item .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link">
+      <div class="logo-placeholder"><img src="images/logo-full.png" alt="Logo Poliambulatorio Delta"></div>
+      <div class="logo-text">Poliambulatorio Delta<span>Catania</span></div>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prestazioni.html">Prestazioni</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="struttura.html">Struttura</a></li>
+        <li><a href="corsi.html" class="active">Corsi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a href="contatti.html#prenota" class="btn btn-primary header-cta-desktop">Prenota ora</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Apri menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav">
+  <div class="mobile-nav-top">
+    <div class="logo-text" style="color:white">Poliambulatorio Delta</div>
+    <button class="mobile-nav-close" aria-label="Chiudi menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="prestazioni.html">Prestazioni</a></li>
+    <li><a href="staff.html">Staff</a></li>
+    <li><a href="struttura.html">Struttura</a></li>
+    <li><a href="corsi.html">Corsi ed Eventi</a></li>
+    <li><a href="contatti.html">Contatti</a></li>
+    <li><a href="blog.html">Blog</a></li>
+  </ul>
+  <a href="contatti.html#prenota" class="btn btn-primary">Prenota ora</a>
+</div>
+
+<section class="page-hero page-hero-corsi">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Corsi ed Eventi</div>
+    <span class="eyebrow">Formazione e prevenzione</span>
+    <h1>Corsi ed Eventi</h1>
+    <p>Impariamo insieme a riconoscere le emergenze e a intervenire nei momenti che contano. Scopri i corsi organizzati dal Poliambulatorio Delta e gli eventi in programma nella nostra sala corsi.</p>
+    <div class="page-hero-cta">
+      <a href="#calendario" class="btn btn-primary">Vedi il calendario</a>
+      <a href="#" class="btn btn-outline" style="border-color:rgba(255,255,255,0.6); color:white;" data-wa-message="Salve, vorrei ricevere informazioni sui corsi organizzati dal Poliambulatorio Delta.">Richiedi informazioni</a>
+    </div>
+  </div>
+  <svg class="page-hero-pulse" viewBox="0 0 800 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,30 120,30 145,8 170,52 195,30 800,30" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</section>
+
+<!-- I NOSTRI CORSI -->
+<section class="section" id="corsi">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Formazione</span>
+      <h2>I corsi che organizziamo</h2>
+      <p>Percorsi pratici pensati per chi vuole imparare a riconoscere e gestire le situazioni di emergenza, in ambito domestico e non.</p>
+    </div>
+
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="course-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><path d="M13.3 8l-2.8 4.2h2.4l-1 3.6 3.2-4.8h-2.4z"/></svg></div>
+        <h3>Corso BLSD</h3>
+        <p>Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore.</p>
+        <a href="#" class="btn btn-outline" data-wa-message="Salve, vorrei ricevere informazioni sul Corso BLSD.">Richiedi informazioni</a>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5l8-7 8 7"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/><path d="M12 12.5v5M9.5 15h5"/></svg></div>
+        <h3>Corso di Primo Soccorso Domestico</h3>
+        <p>Corso dedicato alle principali situazioni di emergenza che possono verificarsi in casa e alle relative modalità di intervento.</p>
+        <a href="#" class="btn btn-outline" data-wa-message="Salve, vorrei ricevere informazioni sul Corso di Primo Soccorso Domestico.">Richiedi informazioni</a>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.3l6.5 2.6v5.4c0 4.6-3.2 6.9-6.5 8.4-3.3-1.5-6.5-3.8-6.5-8.4V5.9l6.5-2.6z"/><path d="M12 9v6M9 12h6"/></svg></div>
+        <h3>Corso di Primo Soccorso</h3>
+        <p>Percorso formativo dedicato alle principali tecniche e procedure di primo soccorso.</p>
+        <a href="#" class="btn btn-outline" data-wa-message="Salve, vorrei ricevere informazioni sul Corso di Primo Soccorso.">Richiedi informazioni</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROSSIMI APPUNTAMENTI -->
+<section class="section bg-sage" id="appuntamenti">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Prossimi appuntamenti</span>
+      <h2>Le prossime date in programma</h2>
+      <p>Gli appuntamenti confermati per i corsi e per gli eventi della sala corsi.</p>
+    </div>
+    <div class="agenda-list" id="agenda-list">
+      <!-- Generato automaticamente da js/corsi.js a partire da CORSI_EVENTI -->
+    </div>
+  </div>
+</section>
+
+<!-- CALENDARIO -->
+<section class="section" id="calendario">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Calendario</span>
+      <h2>Il calendario degli appuntamenti</h2>
+      <p>Consulta le date dei prossimi corsi ed eventi nella nostra sala corsi.</p>
+    </div>
+
+    <div class="calendar-card">
+      <div class="calendar-header">
+        <button class="cal-nav-btn" id="cal-prev" aria-label="Mese precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <h3 id="calendar-label">&nbsp;</h3>
+        <button class="cal-nav-btn" id="cal-next" aria-label="Mese successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="calendar-weekdays">
+        <span>Lun</span><span>Mar</span><span>Mer</span><span>Gio</span><span>Ven</span><span>Sab</span><span>Dom</span>
+      </div>
+      <div class="calendar-grid" id="calendar-grid">
+        <!-- Generato automaticamente da js/corsi.js -->
+      </div>
+      <div class="calendar-legend">
+        <span><span class="cal-dot cal-dot-corso"></span> Corso ricorrente</span>
+        <span><span class="cal-dot cal-dot-evento"></span> Evento una tantum</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTI IN SALA CORSI -->
+<section class="section bg-sage" id="eventi">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Sala corsi</span>
+      <h2>Eventi e iniziative</h2>
+      <p>La nostra sala corsi ospita anche eventi, incontri informativi e iniziative dedicate alla prevenzione. Qui trovi gli appuntamenti in programma.</p>
+    </div>
+    <div id="eventi-list">
+      <!-- Generato automaticamente da js/corsi.js -->
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="section">
+  <div class="container">
+    <div style="background:var(--sky); border-radius: var(--radius-lg); padding:56px 40px; text-align:center; color:white;">
+      <h2 style="color:white; margin-bottom:14px;">Vuoi maggiori informazioni sui corsi?</h2>
+      <p style="color:rgba(255,255,255,0.85); max-width:520px; margin:0 auto 28px;">Scrivici su WhatsApp: ti aiutiamo a scegliere il corso più adatto a te e ti aggiorniamo sulle prossime date disponibili.</p>
+      <a href="#" class="btn" style="background:white; color:var(--sky-dark);" data-wa-message="Salve, vorrei ricevere informazioni sui corsi organizzati dal Poliambulatorio Delta.">Scrivici su WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-link">
+        <div class="logo-placeholder"><img src="images/logo-full.png" alt="Logo Poliambulatorio Delta"></div>
+        <div class="logo-text">Poliambulatorio Delta<span>Catania</span></div>
+      </div>
+      <p>Nove specialistiche mediche in un'unica sede a Catania. Controlli sinergici, senza tempi di attesa.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Naviga</h4>
+      <ul><li><a href="prestazioni.html">Prestazioni</a></li><li><a href="staff.html">Staff medico</a></li><li><a href="struttura.html">La struttura</a></li><li><a href="corsi.html">Corsi ed eventi</a></li><li><a href="blog.html">Blog</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Specialistiche</h4>
+      <ul><li><a href="prestazioni.html#cardiologia">Cardiologia</a></li><li><a href="prestazioni.html#ortopedia">Ortopedia</a></li><li><a href="prestazioni.html#otorino">Otorinolaringoiatria</a></li><li><a href="prestazioni.html">Tutte le branche →</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contatti</h4>
+      <ul><li>Viale Marco Polo, 2 — 95126 Catania</li><li>segreteria@poliambulatoriodelta.it</li><li>Lun/Mer/Ven 9:00–13:00</li><li>Mar/Gio 16:00–19:00</li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Poliambulatorio Delta — P.IVA 06156260876</span>
+    <span><a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></span>
+  </div>
+</footer>
+
+<a href="#" class="wa-float" aria-label="Prenota su WhatsApp" data-wa-message="Salve, vorrei prenotare una visita presso il Poliambulatorio Delta. Potete indicarmi la prima disponibilità?">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.83 14.13c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11a16 16 0 0 1-1.61-.6c-2.83-1.22-4.68-4.06-4.82-4.25-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.35.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.24.57.82 1.96.89 2.1.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+<script src="js/corsi.js"></script>
+</body>
+</html>
