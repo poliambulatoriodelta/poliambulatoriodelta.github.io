@@ -96,8 +96,8 @@ function showFormFeedback(text, isError) {
   if (!feedback) return;
   feedback.textContent = text;
   feedback.style.display = 'block';
-  feedback.style.background = isError ? '#FBE7E0' : '#E4EEEE';
-  feedback.style.color = isError ? '#A84F21' : '#0F3D3E';
+  feedback.style.background = isError ? '#F3E4D8' : '#E3F0F6';
+  feedback.style.color = isError ? '#A84F21' : '#004C7A';
 }
 
 // Filtro prestazioni per branca (pagina prestazioni)
@@ -125,10 +125,52 @@ function initServiceFilter() {
   });
 }
 
+// Lightbox: apre a schermo intero le immagini con classe .lightbox-trigger
+function initLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+  if (!lightbox || !lightboxImg) return;
+
+  function open(trigger) {
+    const src = trigger.getAttribute('data-full') || trigger.querySelector('img').src;
+    const alt = trigger.querySelector('img') ? trigger.querySelector('img').alt : '';
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+  }
+
+  document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => open(trigger));
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open(trigger);
+      }
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) close();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppLinks();
   initMobileNav();
   initBranchBookingButtons();
   initInfoForm();
   initServiceFilter();
+  initLightbox();
 });

@@ -520,15 +520,67 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .promo-pin-featured::before { display: none; }
 
-.promo-pin-image { min-height: 280px; }
-.promo-pin-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.promo-pin-image { min-height: 460px; position: relative; }
+.promo-pin-image img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+
+.promo-pin-image { cursor: zoom-in; }
+.promo-pin-image::after {
+  content: '⤢ Clicca per ingrandire';
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(0, 76, 122, 0.78);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  pointer-events: none;
+}
 
 .promo-pin-body { padding: 32px; }
 
 @media (max-width: 780px) {
   .promo-pin-featured { grid-template-columns: 1fr; }
-  .promo-pin-image { min-height: 220px; }
+  .promo-pin-image { min-height: 360px; }
 }
+
+/* ============ LIGHTBOX ============ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 20, 33, 0.88);
+  z-index: 500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-size: 1.6rem;
+  line-height: 1;
+  border: none;
+}
+
+.lightbox-close:hover { background: rgba(255, 255, 255, 0.22); }
 
 .board-inner {
   background:
