@@ -673,6 +673,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .location-info-item strong { display: block; color: var(--navy-900); font-size: 0.95rem; margin-bottom: 3px; }
 .location-info-item span { font-size: 0.9rem; color: var(--slate-light); }
 
+/* ============ ARTICLE COVER ============ */
+.article-cover { max-width: 900px; margin: -30px auto 0; padding: 0 24px; position: relative; z-index: 2; }
+.article-cover img { width: 100%; aspect-ratio: 21/9; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display: block; }
+
 /* ============ FOOTER ============ */
 .site-footer {
   background: var(--footer-bg);
