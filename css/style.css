@@ -786,7 +786,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .mobile-nav-close svg { width: 28px; height: 28px; }
 .mobile-nav ul { display: flex; flex-direction: column; gap: 6px; }
 .mobile-nav a {
-  color: white; font-family: var(--font-display); font-size: 1.5rem; padding: 14px 0;
+  color: white; font-family: var(--font-logo); font-weight: 600; font-size: 1.4rem; padding: 14px 0;
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 .mobile-nav .btn { margin-top: 28px; }
