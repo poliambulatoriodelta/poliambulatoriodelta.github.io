@@ -94,10 +94,37 @@ function renderCalendario(anno, mese) {
         dots.appendChild(dot);
       });
       cella.appendChild(dots);
+
+      cella.setAttribute('role', 'button');
+      cella.setAttribute('tabindex', '0');
+      cella.setAttribute('aria-label', `Vai a: ${eventiGiorno.map(e => e.titolo).join(', ')}`);
+      const idsGiorno = eventiGiorno.map(e => e.id);
+      const vaiAgliEventiDelGiorno = () => corsiVaiAEvento(idsGiorno);
+      cella.addEventListener('click', vaiAgliEventiDelGiorno);
+      cella.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); vaiAgliEventiDelGiorno(); }
+      });
     }
 
     grid.appendChild(cella);
   }
+}
+
+// Porta l'utente alla scheda del corso/evento corrispondente al giorno cliccato nel calendario
+function corsiVaiAEvento(ids) {
+  let target = null;
+  for (const id of ids) {
+    target = document.getElementById('agenda-item-' + id) || document.getElementById('evento-item-' + id);
+    if (target) break;
+  }
+  if (!target) {
+    target = document.getElementById('appuntamenti');
+  }
+  if (!target) return;
+
+  target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  target.classList.add('cal-target-highlight');
+  setTimeout(() => target.classList.remove('cal-target-highlight'), 1600);
 }
 
 function initCalendario() {
@@ -134,7 +161,7 @@ function renderAgenda() {
   }
 
   list.innerHTML = prossimi.map(ev => `
-    <div class="agenda-item">
+    <div class="agenda-item" id="agenda-item-${ev.id}">
       <div class="agenda-date">
         <span class="agenda-day">${ev.dateObj.getDate()}</span>
         <span class="agenda-month">${CORSI_MESI_MIN[ev.dateObj.getMonth()]}</span>
@@ -168,7 +195,7 @@ function renderEventiSalaCorsi() {
   }
 
   wrap.innerHTML = `<div class="eventi-grid">${eventi.map(ev => `
-    <div class="evento-card">
+    <div class="evento-card" id="evento-item-${ev.id}">
       ${ev.immagine ? `<img src="${ev.immagine}" alt="${ev.titolo}">` : ''}
       <div class="evento-card-body">
         <span class="agenda-badge agenda-badge-evento">Evento</span>

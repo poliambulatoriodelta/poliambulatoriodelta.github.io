@@ -47,7 +47,14 @@
   .calendar-weekdays span { text-align: center; font-size: 0.72rem; font-weight: 700; color: var(--slate-light); text-transform: uppercase; padding-bottom: 8px; display: block; }
   .cal-day { aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate); gap: 3px; }
   .cal-day-empty { visibility: hidden; }
-  .cal-day-active { background: var(--mist); font-weight: 700; color: var(--navy-900); }
+  .cal-day-active { background: var(--mist); font-weight: 700; color: var(--navy-900); cursor: pointer; transition: background .18s, transform .18s; }
+  .cal-day-active:hover, .cal-day-active:focus-visible { background: var(--terracotta-light); transform: translateY(-2px); outline: none; }
+  @keyframes calTargetPulse {
+    0% { box-shadow: 0 0 0 0 rgba(196,98,45,0.45); }
+    70% { box-shadow: 0 0 0 14px rgba(196,98,45,0); }
+    100% { box-shadow: 0 0 0 0 rgba(196,98,45,0); }
+  }
+  .cal-target-highlight { animation: calTargetPulse 1.6s ease-out; border-radius: var(--radius-lg); }
   .cal-dots { display: flex; gap: 3px; }
   .cal-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
   .cal-dot-corso { background: var(--navy-800); }
