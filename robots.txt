@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.poliambulatoriodelta.it/sitemap.xml
+Sitemap: https://poliambulatoriodelta.it/sitemap.xml
