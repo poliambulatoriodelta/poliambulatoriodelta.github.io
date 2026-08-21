@@ -25,27 +25,28 @@ function initWhatsAppLinks() {
 function initMobileNav() {
   const toggle = document.querySelector('.nav-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
+  const backdrop = document.querySelector('.mobile-nav-backdrop');
   const closeBtn = document.querySelector('.mobile-nav-close');
 
   if (!toggle || !mobileNav) return;
 
-  toggle.addEventListener('click', () => {
+  function openNav() {
     mobileNav.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+  }
+  function closeNav() {
+    mobileNav.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+    document.body.style.overflow = '';
   }
 
+  toggle.addEventListener('click', openNav);
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  if (backdrop) backdrop.addEventListener('click', closeNav);
+
   mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    a.addEventListener('click', closeNav);
   });
 }
 
