@@ -167,6 +167,28 @@ function initLightbox() {
   });
 }
 
+// Animazione di comparsa dei blocchi durante lo scorrimento
+function initScrollReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('in-view'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  items.forEach(el => observer.observe(el));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppLinks();
   initMobileNav();
@@ -174,4 +196,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initInfoForm();
   initServiceFilter();
   initLightbox();
+  initScrollReveal();
 });

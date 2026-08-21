@@ -855,3 +855,33 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: 0.82rem; font-weight:600;
 }
 .mobile-nav-quicklinks svg { width:15px; height:15px; }
+
+/* Scroll reveal — animazione leggera dei blocchi dal basso verso l'alto */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.22,1,.36,1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+.branch-card:nth-child(2) { transition-delay: 0.06s; }
+.branch-card:nth-child(3) { transition-delay: 0.12s; }
+.branch-card:nth-child(4) { transition-delay: 0.18s; }
+.branch-card:nth-child(5) { transition-delay: 0.24s; }
+.branch-card:nth-child(6) { transition-delay: 0.30s; }
+.branch-card:nth-child(7) { transition-delay: 0.36s; }
+.branch-card:nth-child(8) { transition-delay: 0.42s; }
+.branch-card:nth-child(9) { transition-delay: 0.48s; }
+
+.strength-item:nth-child(2) { transition-delay: 0.08s; }
+.strength-item:nth-child(3) { transition-delay: 0.16s; }
+.strength-item:nth-child(4) { transition-delay: 0.24s; }
+
+.step-card:nth-child(2) { transition-delay: 0.1s; }
+.step-card:nth-child(3) { transition-delay: 0.2s; }
