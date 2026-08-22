@@ -268,15 +268,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .main-nav a.header-cta-desktop { padding: 14px 30px; font-size: 1rem; }
 
-/* Pulsante "Prenota ora" — entra da destra e lampeggia una volta all'apparizione */
+/* Pulsante "Prenota ora" — entra da destra, lampeggia una volta all'apparizione, poi lampeggia periodicamente */
 @keyframes ctaEnterFlash {
   0%   { opacity: 0; transform: translateX(46px); box-shadow: 0 0 0 0 rgba(196,98,45,0); }
   45%  { opacity: 1; transform: translateX(0); box-shadow: 0 0 0 0 rgba(196,98,45,0); }
   62%  { box-shadow: 0 0 0 9px rgba(196,98,45,0.32); }
   100% { box-shadow: 0 0 0 0 rgba(196,98,45,0); }
 }
+@keyframes ctaPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(196,98,45,0); }
+  8%   { box-shadow: 0 0 0 9px rgba(196,98,45,0.32); }
+  16%  { box-shadow: 0 0 0 0 rgba(196,98,45,0); }
+  100% { box-shadow: 0 0 0 0 rgba(196,98,45,0); }
+}
 .main-nav a.header-cta-desktop {
-  animation: ctaEnterFlash 1.3s cubic-bezier(.22,1,.36,1) 0.4s both;
+  animation:
+    ctaEnterFlash 1.3s cubic-bezier(.22,1,.36,1) 0.4s both,
+    ctaPulse 5s ease-in-out 1.7s infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   .main-nav a.header-cta-desktop { animation: none; }
