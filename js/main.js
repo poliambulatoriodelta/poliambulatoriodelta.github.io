@@ -189,6 +189,61 @@ function initScrollReveal() {
   items.forEach(el => observer.observe(el));
 }
 
+// Banner cookie: gestisce il consenso per i cookie di terze parti (Google Maps)
+const COOKIE_CONSENT_KEY = 'delta_cookie_consent';
+
+function applyCookieConsent(accepted) {
+  document.querySelectorAll('iframe[data-cookie-src]').forEach(frame => {
+    if (accepted && !frame.src) frame.src = frame.getAttribute('data-cookie-src');
+  });
+  document.querySelectorAll('.map-consent-placeholder').forEach(placeholder => {
+    placeholder.style.display = accepted ? 'none' : 'flex';
+  });
+  document.querySelectorAll('.map-frame iframe').forEach(frame => {
+    frame.style.display = accepted ? '' : 'none';
+  });
+}
+
+function initCookieConsent() {
+  const banner = document.getElementById('cookie-banner');
+  const stored = localStorage.getItem(COOKIE_CONSENT_KEY);
+
+  if (stored === 'accepted' || stored === 'rejected') {
+    applyCookieConsent(stored === 'accepted');
+  } else {
+    applyCookieConsent(false);
+    if (banner) banner.classList.add('visible');
+  }
+
+  if (banner) {
+    const acceptBtn = banner.querySelector('.cookie-accept');
+    const rejectBtn = banner.querySelector('.cookie-reject');
+    if (acceptBtn) acceptBtn.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+      applyCookieConsent(true);
+      banner.classList.remove('visible');
+    });
+    if (rejectBtn) rejectBtn.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_CONSENT_KEY, 'rejected');
+      applyCookieConsent(false);
+      banner.classList.remove('visible');
+    });
+  }
+
+  const reopenBtn = document.getElementById('cookie-reopen-btn');
+  if (reopenBtn) reopenBtn.addEventListener('click', () => {
+    if (banner) banner.classList.add('visible');
+  });
+
+  document.querySelectorAll('.map-consent-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+      applyCookieConsent(true);
+      if (banner) banner.classList.remove('visible');
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initWhatsAppLinks();
   initMobileNav();
@@ -197,4 +252,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceFilter();
   initLightbox();
   initScrollReveal();
+  initCookieConsent();
 });
