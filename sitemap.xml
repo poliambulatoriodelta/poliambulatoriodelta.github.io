@@ -36,4 +36,8 @@
     <loc>https://poliambulatoriodelta.it/blog-blsd-formazione.html</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/blog-articolo-esempio.html</loc>
+    <priority>0.5</priority>
+  </url>
 </urlset>
