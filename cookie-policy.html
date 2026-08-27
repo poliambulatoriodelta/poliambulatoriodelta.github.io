@@ -92,23 +92,26 @@
   <p>I cookie sono piccoli file di testo che i siti visitati inviano al browser dell'utente, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva. Possono essere "tecnici", necessari al corretto funzionamento del sito, oppure "di profilazione", utilizzati per tracciare la navigazione e proporre pubblicità mirata.</p>
 
   <h2>2. I cookie utilizzati da questo sito</h2>
-  <p><strong>Questo sito non utilizza cookie di profilazione né strumenti di analisi statistica</strong> (es. Google Analytics) e non effettua alcuna forma di tracciamento a fini pubblicitari.</p>
+  <p>Questo sito <strong>non installa alcun cookie di profilazione a fini pubblicitari</strong>. Utilizza però, solo previo consenso, Google Analytics a scopo statistico, per capire come viene utilizzato il sito e migliorarne i contenuti.</p>
 
   <table class="cookie-table">
     <thead><tr><th>Tipologia</th><th>Fornitore</th><th>Finalità</th></tr></thead>
     <tbody>
       <tr><td>Memoria locale del browser (localStorage)</td><td>Poliambulatorio Delta (sito proprio)</td><td>Ricorda la scelta effettuata nel banner cookie, così da non richiederla ad ogni visita. Non è un cookie in senso tecnico e non viene condiviso con terzi.</td></tr>
-      <tr><td>Cookie di terze parti</td><td>Google Maps (Google Ireland Limited)</td><td>Solo se attivi la mappa nella pagina Contatti, cliccando per visualizzarla: prima di quel momento la mappa non viene caricata e nessun cookie di Google viene installato.</td></tr>
+      <tr><td>Cookie statistici (attivati solo con consenso)</td><td>Google Analytics (Google Ireland Limited)</td><td>Raccoglie informazioni in forma aggregata sull'utilizzo del sito (pagine visitate, provenienza del traffico, durata della visita) per finalità statistiche. Viene attivato solo se scegli "Accetta tutti" nel banner cookie.</td></tr>
+      <tr><td>Cookie di terze parti (attivati solo con consenso)</td><td>Google Maps (Google Ireland Limited)</td><td>Necessari a mostrare la mappa nella pagina Contatti. Vengono installati solo se scegli "Accetta tutti" nel banner, oppure cliccando per visualizzare la mappa direttamente nella pagina Contatti.</td></tr>
       <tr><td>Connessione a font esterni</td><td>Google Fonts (Google Ireland Limited)</td><td>Caricamento dei caratteri tipografici del sito. Comporta una connessione tecnica ai server di Google (con trasmissione dell'indirizzo IP) ma non installa cookie.</td></tr>
     </tbody>
   </table>
+
+  <p>Se scegli "Solo necessari" nel banner cookie, Google Analytics non viene attivato e nessun dato di navigazione viene inviato a Google.</p>
 
   <h2>3. Link a WhatsApp</h2>
   <p>I pulsanti "Prenota su WhatsApp" e il modulo "Richiedi informazioni" aprono l'applicazione o il sito WhatsApp in una pagina/scheda separata. Il sito del Poliambulatorio Delta non installa cookie propri legati a questa funzione; l'eventuale gestione di cookie da parte di WhatsApp avviene secondo la sua informativa, esterna a questo sito.</p>
 
   <div class="cookie-manage-box">
     <h3 style="margin-top:0;">Gestisci le tue preferenze</h3>
-    <p style="margin-bottom:0;">Puoi rivedere o modificare in qualsiasi momento la scelta effettuata riguardo ai cookie di terze parti (Google Maps) tramite il pulsante qui sotto.</p>
+    <p style="margin-bottom:0;">Puoi rivedere o modificare in qualsiasi momento la scelta effettuata riguardo ai cookie statistici (Google Analytics) e di terze parti (Google Maps) tramite il pulsante qui sotto.</p>
     <button type="button" id="cookie-reopen-btn" class="btn btn-sm btn-primary" style="margin-top:16px;">Modifica preferenze cookie</button>
   </div>
 
@@ -160,13 +163,16 @@
 
 <div class="cookie-banner" id="cookie-banner">
   <div class="cookie-banner-inner">
-    <p>Questo sito utilizza esclusivamente cookie tecnici e, solo previo tuo consenso, cookie di terze parti (Google Maps) necessari a mostrarti la mappa nella pagina Contatti. Nessun cookie di profilazione o analisi statistica è installato. Per saperne di più consulta la <a href="cookie-policy.html">Cookie Policy</a>.</p>
+    <div class="cookie-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8.5 9.5h.01M15.5 9.5h.01"/><path d="M8.5 14.5c1 1 2.2 1.5 3.5 1.5s2.5-.5 3.5-1.5"/></svg></div>
+    <h3>La tua privacy conta per noi</h3>
+    <p>Utilizziamo cookie tecnici necessari al funzionamento del sito e, solo previo tuo consenso, cookie di terze parti a scopo statistico (Google Analytics) e per la mappa della pagina Contatti (Google Maps). Per saperne di più consulta la <a href="cookie-policy.html">Cookie Policy</a>.</p>
     <div class="cookie-banner-actions">
-      <button type="button" class="btn btn-sm btn-outline cookie-reject">Solo necessari</button>
-      <button type="button" class="btn btn-sm btn-primary cookie-accept">Accetta tutti</button>
+      <button type="button" class="btn btn-primary cookie-accept">Accetta tutti</button>
+      <button type="button" class="btn btn-outline cookie-reject">Solo necessari</button>
     </div>
   </div>
 </div>
+
 
 <script src="js/main.js"></script>
 </body>

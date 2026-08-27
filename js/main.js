@@ -189,8 +189,25 @@ function initScrollReveal() {
   items.forEach(el => observer.observe(el));
 }
 
-// Banner cookie: gestisce il consenso per i cookie di terze parti (Google Maps)
+// Banner cookie: gestisce il consenso per i cookie di terze parti (Google Maps, Google Analytics)
 const COOKIE_CONSENT_KEY = 'delta_cookie_consent';
+
+// Sostituire con il proprio ID di misurazione Google Analytics (formato G-XXXXXXXXXX)
+const GA_MEASUREMENT_ID = 'G-9B1K1F1HL9';
+
+function loadGoogleAnalytics() {
+  if (window.deltaGaLoaded || !GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.indexOf('XXXX') !== -1) return;
+  window.deltaGaLoaded = true;
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.appendChild(script);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+  window.gtag = gtag;
+}
 
 function applyCookieConsent(accepted) {
   document.querySelectorAll('iframe[data-cookie-src]').forEach(frame => {
@@ -202,6 +219,7 @@ function applyCookieConsent(accepted) {
   document.querySelectorAll('.map-frame iframe').forEach(frame => {
     frame.style.display = accepted ? '' : 'none';
   });
+  if (accepted) loadGoogleAnalytics();
 }
 
 function initCookieConsent() {
@@ -212,7 +230,10 @@ function initCookieConsent() {
     applyCookieConsent(stored === 'accepted');
   } else {
     applyCookieConsent(false);
-    if (banner) banner.classList.add('visible');
+    if (banner) {
+      banner.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   if (banner) {
@@ -222,24 +243,32 @@ function initCookieConsent() {
       localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
       applyCookieConsent(true);
       banner.classList.remove('visible');
+      document.body.style.overflow = '';
     });
     if (rejectBtn) rejectBtn.addEventListener('click', () => {
       localStorage.setItem(COOKIE_CONSENT_KEY, 'rejected');
       applyCookieConsent(false);
       banner.classList.remove('visible');
+      document.body.style.overflow = '';
     });
   }
 
   const reopenBtn = document.getElementById('cookie-reopen-btn');
   if (reopenBtn) reopenBtn.addEventListener('click', () => {
-    if (banner) banner.classList.add('visible');
+    if (banner) {
+      banner.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
   });
 
   document.querySelectorAll('.map-consent-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
       applyCookieConsent(true);
-      if (banner) banner.classList.remove('visible');
+      if (banner) {
+        banner.classList.remove('visible');
+        document.body.style.overflow = '';
+      }
     });
   });
 }
