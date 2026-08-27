@@ -192,21 +192,12 @@ function initScrollReveal() {
 // Banner cookie: gestisce il consenso per i cookie di terze parti (Google Maps, Google Analytics)
 const COOKIE_CONSENT_KEY = 'delta_cookie_consent';
 
-// Sostituire con il proprio ID di misurazione Google Analytics (formato G-XXXXXXXXXX)
-const GA_MEASUREMENT_ID = 'G-9B1K1F1HL9';
-
-function loadGoogleAnalytics() {
-  if (window.deltaGaLoaded || !GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.indexOf('XXXX') !== -1) return;
-  window.deltaGaLoaded = true;
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(script);
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
-  window.gtag = gtag;
+// Il tag Google (gtag.js) è caricato in ogni pagina con consenso di default negato
+// (Consent Mode): qui aggiorniamo solo lo stato del consenso in base alla scelta dell'utente.
+function updateAnalyticsConsent(accepted) {
+  if (typeof window.gtag === 'function') {
+    window.gtag('consent', 'update', { analytics_storage: accepted ? 'granted' : 'denied' });
+  }
 }
 
 function applyCookieConsent(accepted) {
@@ -219,7 +210,7 @@ function applyCookieConsent(accepted) {
   document.querySelectorAll('.map-frame iframe').forEach(frame => {
     frame.style.display = accepted ? '' : 'none';
   });
-  if (accepted) loadGoogleAnalytics();
+  updateAnalyticsConsent(accepted);
 }
 
 function initCookieConsent() {
