@@ -40,4 +40,40 @@
     <loc>https://poliambulatoriodelta.it/blog-articolo-esempio.html</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/cardiologia-catania.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/endocrinologia-diabetologia-catania.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/nutrizionistica-catania.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/ortopedia-catania.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/osteopatia-catania.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/otorinolaringoiatria-catania.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/ematologia-catania.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/reumatologia-catania.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://poliambulatoriodelta.it/medicina-lavoro-catania.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
