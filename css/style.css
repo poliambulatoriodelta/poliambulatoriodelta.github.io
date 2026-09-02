@@ -761,6 +761,63 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   gap: 12px;
 }
 
+/* ============ CAROSELLO STRUTTURA (Home) ============ */
+/* Sostituisce l'immagine dell'hero: eredita da .hero-photo dimensioni, proporzioni, angoli e ombra.
+   min-width:0 evita che il grid item collassi a larghezza 0 (tutti i figli sono position:absolute
+   e non contribuiscono al calcolo automatico della larghezza della colonna). */
+.hero-photo.struttura-carousel { width: 100%; min-width: 0; }
+.struttura-carousel-track { position: relative; width: 100%; height: 100%; }
+.struttura-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  overflow: hidden;
+}
+.struttura-slide.is-active { opacity: 1; z-index: 1; }
+.struttura-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 3.4s ease-out;
+}
+.struttura-slide.is-active img { transform: scale(1.06); }
+.struttura-slide-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 20px;
+  background: linear-gradient(to top, rgba(0,20,33,0.68), transparent);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+}
+.struttura-carousel-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.struttura-carousel-dots .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.55); border: none; padding: 0; cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+  transition: background 0.25s, transform 0.25s;
+}
+.struttura-carousel-dots .dot.is-active { background: var(--terracotta); transform: scale(1.35); }
+@media (prefers-reduced-motion: reduce) {
+  .struttura-slide { transition: opacity 0.3s ease; }
+  .struttura-slide img, .struttura-slide.is-active img { transition: none; transform: none; }
+}
+
 /* ============ COOKIE CONSENT MODAL ============ */
 .cookie-banner {
   position: fixed;
