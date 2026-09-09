@@ -487,6 +487,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .strength-item h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .strength-item p { font-size: 0.9rem; }
 .bg-petrol .strength-item p { color: rgba(255,255,255,0.75); }
+.bg-petrol .strength-item .btn-outline { margin-top: 14px; color: var(--white); border-color: rgba(255,255,255,0.5); }
+.bg-petrol .strength-item .btn-outline:hover { background: var(--white); color: var(--navy-900); }
 
 /* ============ COME PRENOTARSI (steps) ============ */
 .steps-wrap {
