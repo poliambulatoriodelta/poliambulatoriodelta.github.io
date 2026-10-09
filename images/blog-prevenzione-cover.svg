@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#DDEBF2"/>
+      <stop offset="0.55" stop-color="#EEF5F8"/>
+      <stop offset="1" stop-color="#F8F1EA"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E7BA8"/>
+      <stop offset="0.5" stop-color="#005D8D"/>
+      <stop offset="1" stop-color="#004C7A"/>
+    </linearGradient>
+    <linearGradient id="ecgfade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0E7BA8" stop-opacity="0"/>
+      <stop offset="0.12" stop-color="#0E7BA8" stop-opacity="0.55"/>
+      <stop offset="0.88" stop-color="#0E7BA8" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#0E7BA8" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.7" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#004C7A" flood-opacity="0.18"/>
+    </filter>
+    <filter id="softer" x="-40%" y="-40%" width="180%" height="190%">
+      <feDropShadow dx="0" dy="26" stdDeviation="26" flood-color="#004C7A" flood-opacity="0.30"/>
+    </filter>
+    <filter id="tiny" x="-50%" y="-50%" width="200%" height="220%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#004C7A" flood-opacity="0.20"/>
+    </filter>
+    <clipPath id="cardclip"><rect width="250" height="290" rx="28"/></clipPath>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#0E7BA8" opacity="0.16"/>
+    </pattern>
+  </defs>
+
+  <!-- sfondo -->
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="150" cy="90" r="290" fill="#CFE3EC" opacity="0.55"/>
+  <circle cx="1120" cy="740" r="320" fill="#F3E4D8" opacity="0.75"/>
+  <circle cx="1090" cy="60" r="150" fill="#FFFFFF" opacity="0.5"/>
+  <rect x="40" y="520" width="280" height="240" fill="url(#dots)"/>
+  <rect x="880" y="40" width="280" height="200" fill="url(#dots)"/>
+
+  <!-- alone centrale -->
+  <circle cx="600" cy="400" r="330" fill="url(#halo)"/>
+  <circle cx="600" cy="400" r="292" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.9"/>
+  <circle cx="600" cy="400" r="345" fill="none" stroke="#9FC3D3" stroke-width="2" stroke-dasharray="2 14" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- tracciato di fondo -->
+  <path d="M0 400 H52 L66 372 L82 440 L98 344 L112 400 H388 L400 378 L412 428 L424 400 H776 L788 378 L800 428 L812 400 H1088 L1102 372 L1118 440 L1134 344 L1148 400 H1200"
+        fill="none" stroke="url(#ecgfade)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- decorazioni -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M236 168 v26 M223 181 h26" stroke="#0E7BA8" stroke-width="6" opacity="0.75"/>
+    <path d="M968 176 v24 M956 188 h24" stroke="#E8A47C" stroke-width="6"/>
+    <path d="M452 640 v22 M441 651 h22" stroke="#C4622D" stroke-width="5" opacity="0.8"/>
+    <path d="M770 636 v22 M759 647 h22" stroke="#0E7BA8" stroke-width="5" opacity="0.7"/>
+    <circle cx="92" cy="630" r="11" stroke="#0E7BA8" stroke-width="4" opacity="0.6"/>
+    <circle cx="1010" cy="646" r="12" stroke="#C4622D" stroke-width="4" opacity="0.7"/>
+  </g>
+  <circle cx="1118" cy="214" r="9" fill="#E8A47C"/>
+  <circle cx="316" cy="640" r="7" fill="#0E7BA8" opacity="0.55"/>
+  <circle cx="704" cy="150" r="7" fill="#C4622D" opacity="0.7"/>
+  <circle cx="498" cy="160" r="5" fill="#0E7BA8" opacity="0.6"/>
+
+  <!-- scheda sinistra: calendario dei controlli -->
+  <g transform="translate(118 252) rotate(-6 125 145)">
+    <rect width="250" height="290" rx="28" fill="#FFFFFF" filter="url(#soft)"/>
+    <g clip-path="url(#cardclip)">
+      <rect width="250" height="72" fill="#C4622D"/>
+      <rect y="64" width="250" height="8" fill="#A84F21" opacity="0.35"/>
+    </g>
+    <rect x="84" y="29" width="82" height="14" rx="7" fill="#FFFFFF" opacity="0.92"/>
+    <rect x="62" y="-16" width="16" height="42" rx="8" fill="#004C7A"/>
+    <rect x="172" y="-16" width="16" height="42" rx="8" fill="#004C7A"/>
+    <g fill="#E9F2F6">
+      <rect x="27" y="96" width="30" height="30" rx="9"/><rect x="69" y="96" width="30" height="30" rx="9"/><rect x="111" y="96" width="30" height="30" rx="9"/><rect x="153" y="96" width="30" height="30" rx="9"/><rect x="195" y="96" width="30" height="30" rx="9"/>
+      <rect x="27" y="142" width="30" height="30" rx="9"/><rect x="69" y="142" width="30" height="30" rx="9"/><rect x="111" y="142" width="30" height="30" rx="9"/><rect x="195" y="142" width="30" height="30" rx="9"/>
+      <rect x="27" y="188" width="30" height="30" rx="9"/><rect x="111" y="188" width="30" height="30" rx="9"/><rect x="153" y="188" width="30" height="30" rx="9"/><rect x="195" y="188" width="30" height="30" rx="9"/>
+      <rect x="27" y="234" width="30" height="30" rx="9"/><rect x="69" y="234" width="30" height="30" rx="9"/><rect x="111" y="234" width="30" height="30" rx="9"/>
+    </g>
+    <rect x="69" y="188" width="30" height="30" rx="9" fill="#F3E4D8"/>
+    <circle cx="84" cy="203" r="5" fill="#C4622D"/>
+    <circle cx="168" cy="157" r="26" fill="#004C7A"/>
+    <path d="M156 158 l9 9 l16 -19" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- scheda destra: valori sotto controllo -->
+  <g transform="translate(832 252) rotate(6 125 145)">
+    <rect width="250" height="290" rx="28" fill="#FFFFFF" filter="url(#soft)"/>
+    <rect x="28" y="30" width="112" height="15" rx="7.5" fill="#004C7A"/>
+    <rect x="28" y="54" width="72" height="10" rx="5" fill="#C3D8E2"/>
+    <circle cx="200" cy="46" r="24" fill="#F3E4D8"/>
+    <path d="M200 30 C209 41 213 47 213 52 A13 13 0 0 1 187 52 C187 47 191 41 200 30 Z" fill="#C4622D"/>
+    <line x1="28" y1="86" x2="222" y2="86" stroke="#E9F2F6" stroke-width="2"/>
+
+    <circle cx="46" cy="124" r="17" fill="#4C7A5E"/>
+    <path d="M38 125 l6 6 l11 -13" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="76" y="108" width="92" height="10" rx="5" fill="#C3D8E2"/>
+    <rect x="76" y="127" width="146" height="13" rx="6.5" fill="#E9F2F6"/>
+    <rect x="76" y="127" width="98" height="13" rx="6.5" fill="#0E7BA8"/>
+
+    <circle cx="46" cy="184" r="17" fill="#C4622D"/>
+    <path d="M46 175 v10" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="46" cy="192.5" r="2.6" fill="#FFFFFF"/>
+    <rect x="76" y="168" width="70" height="10" rx="5" fill="#C3D8E2"/>
+    <rect x="76" y="187" width="146" height="13" rx="6.5" fill="#E9F2F6"/>
+    <rect x="76" y="187" width="128" height="13" rx="6.5" fill="#E8A47C"/>
+
+    <circle cx="46" cy="244" r="17" fill="#4C7A5E"/>
+    <path d="M38 245 l6 6 l11 -13" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="76" y="228" width="104" height="10" rx="5" fill="#C3D8E2"/>
+    <rect x="76" y="247" width="146" height="13" rx="6.5" fill="#E9F2F6"/>
+    <rect x="76" y="247" width="78" height="13" rx="6.5" fill="#0E7BA8"/>
+  </g>
+
+  <!-- scudo centrale -->
+  <g filter="url(#softer)">
+    <path d="M600 218 L742 268 L742 398 C742 492 682 556 600 590 C518 556 458 492 458 398 L458 268 Z"
+          fill="url(#shield)" stroke="url(#shield)" stroke-width="30" stroke-linejoin="round"/>
+  </g>
+  <path d="M600 244 L720 286 L720 398 C720 478 670 534 600 564 C530 534 480 478 480 398 L480 286 Z"
+        fill="none" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M600 218 L742 268 L742 300 C660 300 560 330 458 420 L458 268 Z" fill="#FFFFFF" opacity="0.07"/>
+
+  <!-- cuore con tracciato -->
+  <g transform="translate(600 384) scale(0.9)">
+    <path d="M0 -30 C-22 -72 -92 -60 -92 -6 C-92 42 -42 72 0 108 C42 72 92 42 92 -6 C92 -60 22 -72 0 -30 Z" fill="#FFFFFF"/>
+    <path d="M-66 14 H-34 L-21 -16 L-5 46 L13 -34 L26 14 H66" fill="none" stroke="#C4622D" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- distintivi -->
+  <g transform="translate(392 556)" filter="url(#tiny)">
+    <circle r="34" fill="#FFFFFF"/>
+    <path d="M-14 12 C-18 -10 0 -20 17 -17 C20 0 10 17 -14 12 Z" fill="#4C7A5E"/>
+    <path d="M-15 14 C-6 4 2 -3 10 -9" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(812 262)" filter="url(#tiny)">
+    <circle r="34" fill="#FFFFFF"/>
+    <circle r="17" fill="none" stroke="#004C7A" stroke-width="5"/>
+    <path d="M0 -9 V0 H8" fill="none" stroke="#C4622D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
