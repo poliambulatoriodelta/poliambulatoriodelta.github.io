@@ -22,6 +22,14 @@ const CORSI_EVENTI = [
     data: '2026-10-30',
     orario: '',
     descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00."
+  },
+  {
+    id: 'checkup-2026-10-16',
+    tipo: 'evento',
+    titolo: 'Giornata Check-Up Base',
+    data: '2026-10-16',
+    orario: '9:00–13:00',
+    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue. Promozione € 60,00."
   }
   // Aggiungi qui i prossimi corsi o eventi
 ];
