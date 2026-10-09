@@ -30,6 +30,22 @@ const CORSI_EVENTI = [
     data: '2026-10-16',
     orario: '9:00–13:00',
     descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue. Promozione € 60,00."
+  },
+  {
+    id: 'primo-soccorso-2026-11-07',
+    tipo: 'corso',
+    titolo: 'Corso di Primo Soccorso',
+    data: '2026-11-07',
+    orario: '9:00–13:00',
+    descrizione: "Percorso formativo dedicato alle principali tecniche e procedure di primo soccorso."
+  },
+  {
+    id: 'primo-soccorso-domestico-2026-11-19',
+    tipo: 'corso',
+    titolo: 'Corso di Primo Soccorso Domestico',
+    data: '2026-11-19',
+    orario: '17:00–19:00',
+    descrizione: "Corso dedicato alle principali situazioni di emergenza che possono verificarsi in casa e alle relative modalità di intervento."
   }
   // Aggiungi qui i prossimi corsi o eventi
 ];
