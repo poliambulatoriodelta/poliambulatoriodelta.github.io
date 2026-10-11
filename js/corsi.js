@@ -29,7 +29,7 @@ const CORSI_EVENTI = [
     titolo: 'Giornata Check-Up Base',
     data: '2026-10-16',
     orario: '9:00–13:00',
-    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue. Promozione € 60,00."
+    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue."
   },
   {
     id: 'primo-soccorso-2026-11-07',
