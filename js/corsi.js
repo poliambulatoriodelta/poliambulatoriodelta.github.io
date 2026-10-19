@@ -16,11 +16,11 @@
 // ============================================
 const CORSI_EVENTI = [
   {
-    id: 'blsd-2026-10-30',
+    id: 'blsd-2026-11-03',
     tipo: 'corso',
     titolo: 'Corso BLSD + PBLSD',
-    data: '2026-10-30',
-    orario: '',
+    data: '2026-11-03',
+    orario: '15:30',
     descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00."
   },
   {
