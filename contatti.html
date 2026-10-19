@@ -34,7 +34,7 @@
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="stylesheet" href="css/style.css?v=3">
 <style>
   .contact-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items:start; }
   .contact-form { background:white; border:1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; }
@@ -90,10 +90,19 @@
     "longitude": 15.0978039
   },
   "hasMap": "https://www.google.com/maps?q=Viale+Marco+Polo+2,+95126+Catania+CT",
-  "areaServed": {
-    "@type": "City",
-    "name": "Catania"
-  },
+  "areaServed": [
+    {"@type": "City", "name": "Catania"},
+    {"@type": "AdministrativeArea", "name": "Provincia di Catania"},
+    {"@type": "City", "name": "Sant'Agata li Battiati"},
+    {"@type": "City", "name": "Gravina di Catania"},
+    {"@type": "City", "name": "Tremestieri Etneo"},
+    {"@type": "City", "name": "Mascalucia"},
+    {"@type": "City", "name": "Misterbianco"},
+    {"@type": "City", "name": "San Giovanni la Punta"},
+    {"@type": "City", "name": "Aci Castello"},
+    {"@type": "City", "name": "Acireale"},
+    {"@type": "City", "name": "Paternò"}
+  ],
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday","Friday"], "opens": "09:00", "closes": "13:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Thursday"], "opens": "16:00", "closes": "19:00" }
@@ -269,6 +278,37 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<section class="section bg-sage" id="zone-servite">
+  <div class="container">
+    <div class="reveal" style="max-width:760px; margin:0 auto 36px; text-align:center;">
+      <span class="eyebrow">Dove siamo</span>
+      <h2>Facile da raggiungere da tutta la provincia di Catania</h2>
+      <p>Il Poliambulatorio Delta si trova in <strong>Viale Marco Polo 2, Catania</strong>, a ridosso della Circonvallazione e dei principali assi di collegamento: un punto comodo per chi cerca visite specialistiche, esami e check-up a Catania e nei comuni vicini.</p>
+    </div>
+    <div class="zone-grid">
+      <div class="zone-card reveal">
+        <h3>Catania e quartieri</h3>
+        <ul class="zone-list">
+          <li>Centro storico</li><li>Via Etnea</li><li>Borgo-Sanzio</li><li>Cibali</li><li>Canalicchio</li><li>Barriera</li><li>Picanello</li><li>Ognina</li><li>Corso Italia</li><li>Nesima</li><li>San Giovanni Galermo</li><li>Trappeto</li><li>Librino</li><li>San Nullo</li>
+        </ul>
+      </div>
+      <div class="zone-card reveal">
+        <h3>Hinterland etneo</h3>
+        <ul class="zone-list">
+          <li>Sant'Agata li Battiati</li><li>Gravina di Catania</li><li>Tremestieri Etneo</li><li>Mascalucia</li><li>San Gregorio di Catania</li><li>Misterbianco</li><li>Camporotondo Etneo</li><li>San Giovanni la Punta</li><li>San Pietro Clarenza</li><li>Pedara</li><li>Nicolosi</li><li>Trecastagni</li><li>Belpasso</li><li>Motta Sant'Anastasia</li><li>Paternò</li>
+        </ul>
+      </div>
+      <div class="zone-card reveal">
+        <h3>Riviera dei Ciclopi</h3>
+        <ul class="zone-list">
+          <li>Aci Castello</li><li>Aci Trezza</li><li>Aci Catena</li><li>Valverde</li><li>Acireale</li><li>Aci Bonaccorsi</li><li>Aci Sant'Antonio</li><li>Giarre</li><li>Riposto</li>
+        </ul>
+      </div>
+    </div>
+    <p class="reveal" style="text-align:center; max-width:720px; margin:32px auto 0;">Cerchi una visita specialistica, un esame o un check-up <strong>a Catania o in provincia</strong>? Siamo facilmente raggiungibili in auto dalla Circonvallazione e dalla tangenziale, con <a href="struttura.html" style="color:var(--sky); text-decoration:underline;">parcheggio a pochi metri</a> dalla sede.</p>
   </div>
 </section>
 
