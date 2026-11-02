@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Una coppia di pensionati sorridenti accanto a una grande moneta da 300 euro e a una scheda sanitaria">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eaf4f9"/>
+      <stop offset="1" stop-color="#c9e2ee"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#ffe9a3"/>
+      <stop offset="0.55" stop-color="#ffc94d"/>
+      <stop offset="1" stop-color="#e9a62a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff6d6" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff6d6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="90" cy="70" r="150" fill="#ffffff" opacity="0.35"/>
+  <circle cx="1130" cy="600" r="210" fill="#ffffff" opacity="0.35"/>
+  <circle cx="860" cy="300" r="300" fill="url(#glow)"/>
+
+  <!-- puntini decorativi -->
+  <g fill="#1d6f8f" opacity="0.25">
+    <circle cx="1070" cy="70" r="5"/><circle cx="1110" cy="70" r="5"/><circle cx="1150" cy="70" r="5"/>
+    <circle cx="1070" cy="105" r="5"/><circle cx="1110" cy="105" r="5"/><circle cx="1150" cy="105" r="5"/>
+    <circle cx="60" cy="560" r="5"/><circle cx="100" cy="560" r="5"/><circle cx="140" cy="560" r="5"/>
+  </g>
+
+  <!-- terreno -->
+  <ellipse cx="400" cy="548" rx="330" ry="26" fill="#1d4f73" opacity="0.12"/>
+
+  <!-- DONNA -->
+  <g>
+    <path d="M190 548 Q190 400 300 378 Q410 400 410 548 Z" fill="#2a8fa8"/>
+    <path d="M262 380 Q300 420 338 380 L322 372 Q300 392 278 372 Z" fill="#ffffff"/>
+    <rect x="276" y="326" width="48" height="56" rx="20" fill="#f0c6a2"/>
+    <circle cx="300" cy="278" r="62" fill="#f4cfae"/>
+    <!-- capelli grigi -->
+    <path d="M236 280 Q232 206 300 202 Q368 206 364 280 Q350 232 300 230 Q250 232 236 280 Z" fill="#cfd6dc"/>
+    <circle cx="300" cy="190" r="30" fill="#cfd6dc"/>
+    <circle cx="282" cy="286" r="5" fill="#3a2f2a"/><circle cx="318" cy="286" r="5" fill="#3a2f2a"/>
+    <path d="M276 312 Q300 334 324 312" stroke="#b5533c" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="266" cy="306" r="9" fill="#f08c7a" opacity="0.35"/><circle cx="334" cy="306" r="9" fill="#f08c7a" opacity="0.35"/>
+  </g>
+
+  <!-- UOMO -->
+  <g>
+    <path d="M345 548 Q345 410 470 386 Q595 410 595 548 Z" fill="#1d4f73"/>
+    <path d="M430 388 L470 450 L510 388 Z" fill="#ffffff"/>
+    <rect x="444" y="334" width="52" height="58" rx="20" fill="#eebd96"/>
+    <circle cx="470" cy="284" r="66" fill="#f1c6a1"/>
+    <!-- capelli grigi -->
+    <path d="M404 280 Q400 214 470 210 Q540 214 536 280 Q528 244 470 242 Q412 244 404 280 Z" fill="#d6dce1"/>
+    <!-- occhiali -->
+    <g fill="none" stroke="#2b3a46" stroke-width="4">
+      <circle cx="446" cy="288" r="15"/><circle cx="494" cy="288" r="15"/><path d="M461 288 H479"/>
+    </g>
+    <circle cx="446" cy="288" r="4.5" fill="#3a2f2a"/><circle cx="494" cy="288" r="4.5" fill="#3a2f2a"/>
+    <!-- baffi e sorriso -->
+    <path d="M446 316 Q470 328 494 316" stroke="#d6dce1" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M448 330 Q470 350 492 330" stroke="#b5533c" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- scheda sanitaria -->
+  <g transform="rotate(-8 650 190)">
+    <rect x="590" y="130" width="150" height="100" rx="16" fill="#ffffff" stroke="#bcd9e6" stroke-width="3"/>
+    <rect x="610" y="190" width="70" height="8" rx="4" fill="#c9dbe5"/>
+    <rect x="610" y="206" width="48" height="8" rx="4" fill="#c9dbe5"/>
+    <rect x="620" y="146" width="36" height="36" rx="9" fill="#2a8fa8"/>
+    <path d="M638 152 V176 M626 164 H650" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- MONETA -->
+  <g>
+    <circle cx="880" cy="290" r="150" fill="#e9a62a" opacity="0.35" transform="translate(8 12)"/>
+    <circle cx="880" cy="290" r="150" fill="url(#gold)" stroke="#e0a63a" stroke-width="6"/>
+    <circle cx="880" cy="290" r="118" fill="none" stroke="#e0a63a" stroke-width="5"/>
+    <text x="880" y="338" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="150" font-weight="700" fill="#8a5a12">€</text>
+    <!-- luce -->
+    <path d="M770 220 Q800 160 870 150" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.55"/>
+  </g>
+
+  <!-- etichetta importo -->
+  <g>
+    <rect x="780" y="430" width="200" height="72" rx="36" fill="#1d6f8f"/>
+    <text x="880" y="480" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#ffffff">300 €</text>
+  </g>
+
+  <!-- scintille -->
+  <g fill="#ffc94d">
+    <path d="M1010 190 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8z"/>
+    <path d="M700 420 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z"/>
+    <path d="M740 80 l6 16 16 6 -16 6 -6 16 -6 -16 -16 -6 16 -6z"/>
+  </g>
+</svg>
