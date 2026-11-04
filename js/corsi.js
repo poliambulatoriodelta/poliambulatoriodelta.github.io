@@ -32,6 +32,14 @@ const CORSI_EVENTI = [
     descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue."
   },
   {
+    id: 'checkup-2026-11-20',
+    tipo: 'evento',
+    titolo: 'Giornata Check-Up Base',
+    data: '2026-11-20',
+    orario: '8:00',
+    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue."
+  },
+  {
     id: 'primo-soccorso-2026-11-07',
     tipo: 'corso',
     titolo: 'Corso di Primo Soccorso',
