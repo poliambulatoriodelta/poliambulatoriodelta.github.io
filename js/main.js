@@ -5,6 +5,9 @@
 // --- Numero WhatsApp della struttura (placeholder da confermare) ---
 const WHATSAPP_NUMBER = "390952904796"; // formato internazionale senza + né spazi
 
+// Lingua della pagina: le pagine in /en/ hanno <html lang="en">
+const IS_EN = document.documentElement.lang === 'en';
+
 // Costruisce link WhatsApp con messaggio precompilato
 function buildWhatsAppLink(message) {
   const encoded = encodeURIComponent(message);
@@ -54,7 +57,9 @@ function initMobileNav() {
 function initBranchBookingButtons() {
   document.querySelectorAll('[data-wa-branch]').forEach(el => {
     const branch = el.getAttribute('data-wa-branch');
-    const message = `Salve, vorrei prenotare una visita di ${branch} presso il Poliambulatorio Delta. Potete indicarmi la prima disponibilità?`;
+    const message = IS_EN
+      ? `Hello, I would like to book a ${branch} appointment at Poliambulatorio Delta. Could you let me know the first available date?`
+      : `Salve, vorrei prenotare una visita di ${branch} presso il Poliambulatorio Delta. Potete indicarmi la prima disponibilità?`;
     el.setAttribute('href', buildWhatsAppLink(message));
     el.setAttribute('target', '_blank');
     el.setAttribute('rel', 'noopener noreferrer');
@@ -75,19 +80,19 @@ function initInfoForm() {
     const messaggio = form.querySelector('#f-messaggio').value.trim();
 
     if (!nome || !telefono) {
-      showFormFeedback('Compila almeno nome e telefono per procedere.', true);
+      showFormFeedback(IS_EN ? 'Please fill in at least your name and phone number to continue.' : 'Compila almeno nome e telefono per procedere.', true);
       return;
     }
 
-    let waText = `Salve, sono ${nome}.`;
-    if (branca) waText += ` Sono interessato/a a: ${branca}.`;
+    let waText = IS_EN ? `Hello, my name is ${nome}.` : `Salve, sono ${nome}.`;
+    if (branca) waText += IS_EN ? ` I am interested in: ${branca}.` : ` Sono interessato/a a: ${branca}.`;
     if (messaggio) waText += ` ${messaggio}`;
-    waText += ` (Recapito telefonico: ${telefono})`;
+    waText += IS_EN ? ` (Phone number: ${telefono})` : ` (Recapito telefonico: ${telefono})`;
 
     const link = buildWhatsAppLink(waText);
     window.open(link, '_blank', 'noopener,noreferrer');
 
-    showFormFeedback('Richiesta pronta! Si è aperta una chat WhatsApp con il messaggio precompilato: basta premere invia.', false);
+    showFormFeedback(IS_EN ? 'Request ready! A WhatsApp chat has opened with a pre-filled message: just press send.' : 'Richiesta pronta! Si è aperta una chat WhatsApp con il messaggio precompilato: basta premere invia.', false);
     form.reset();
   });
 }
@@ -281,7 +286,7 @@ function initStrutturaCarousel() {
   slides.forEach((slide, i) => {
     const dot = document.createElement('button');
     dot.className = 'dot' + (i === 0 ? ' is-active' : '');
-    dot.setAttribute('aria-label', 'Vai alla foto ' + (i + 1));
+    dot.setAttribute('aria-label', (IS_EN ? 'Go to photo ' : 'Vai alla foto ') + (i + 1));
     dot.addEventListener('click', () => goTo(i));
     dotsWrap.appendChild(dot);
   });

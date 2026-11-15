@@ -12,6 +12,7 @@
 //   data         data in formato 'YYYY-MM-DD'
 //   orario       fascia oraria, es. '9:00–13:00' — lasciare '' se non definita
 //   descrizione  breve descrizione mostrata in agenda e nel calendario
+//   titolo_en / descrizione_en  versione inglese, usata nelle pagine in /en/
 //   immagine     (solo eventi, opzionale) percorso immagine per la card evento
 // ============================================
 const CORSI_EVENTI = [
@@ -19,55 +20,98 @@ const CORSI_EVENTI = [
     id: 'blsd-2026-11-27',
     tipo: 'corso',
     titolo: 'Corso BLSD + PBLSD',
+    titolo_en: 'BLSD + PBLSD Course',
     data: '2026-11-27',
     orario: '15:30',
-    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00."
+    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00.",
+    descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
   },
   {
     id: 'checkup-2026-10-16',
     tipo: 'evento',
     titolo: 'Giornata Check-Up Base',
+    titolo_en: 'Basic Check-Up Day',
     data: '2026-10-16',
     orario: '9:00–13:00',
-    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue."
+    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue.",
+    descrizione_en: "A day dedicated to the Complete Basic Check-Up: general medical examination, electrocardiogram, spirometry and blood tests."
   },
   {
     id: 'checkup-2026-11-20',
     tipo: 'evento',
     titolo: 'Giornata Check-Up Base',
+    titolo_en: 'Basic Check-Up Day',
     data: '2026-11-20',
     orario: '8:00',
-    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue."
+    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue.",
+    descrizione_en: "A day dedicated to the Complete Basic Check-Up: general medical examination, electrocardiogram, spirometry and blood tests."
   },
   {
     id: 'primo-soccorso-2026-11-07',
     tipo: 'corso',
     titolo: 'Corso di Primo Soccorso',
+    titolo_en: 'First Aid Course',
     data: '2026-11-07',
     orario: '9:00–13:00',
-    descrizione: "Percorso formativo dedicato alle principali tecniche e procedure di primo soccorso."
+    descrizione: "Percorso formativo dedicato alle principali tecniche e procedure di primo soccorso.",
+    descrizione_en: "A training course dedicated to the main first aid techniques and procedures."
   },
   {
     id: 'primo-soccorso-domestico-2026-11-19',
     tipo: 'corso',
     titolo: 'Corso di Primo Soccorso Domestico',
+    titolo_en: 'Home First Aid Course',
     data: '2026-11-19',
     orario: '17:00–19:00',
-    descrizione: "Corso dedicato alle principali situazioni di emergenza che possono verificarsi in casa e alle relative modalità di intervento."
+    descrizione: "Corso dedicato alle principali situazioni di emergenza che possono verificarsi in casa e alle relative modalità di intervento.",
+    descrizione_en: "A course dedicated to the main emergency situations that can occur at home and how to deal with them."
   }
   // Aggiungi qui i prossimi corsi o eventi
 ];
 
+// Lingua della pagina (le pagine in /en/ hanno <html lang="en">)
+const CORSI_EN = document.documentElement.lang === 'en';
+
 function corsiPad2(n) { return String(n).padStart(2, '0'); }
 
-const CORSI_MESI = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
-const CORSI_MESI_MIN = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
-const CORSI_GIORNI = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
+const CORSI_MESI = CORSI_EN
+  ? ['January','February','March','April','May','June','July','August','September','October','November','December']
+  : ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+const CORSI_MESI_MIN = CORSI_EN
+  ? ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+  : ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+const CORSI_GIORNI = CORSI_EN
+  ? ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+  : ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
+
+// Testi dell'interfaccia nelle due lingue
+const CORSI_TXT = CORSI_EN ? {
+  vaiA: 'Go to: ',
+  nessuno: 'No dates scheduled at the moment: contact us to be kept up to date on upcoming dates.',
+  corso: 'Course', evento: 'Event',
+  info: 'Request info',
+  wa: (titolo, giorno, mese) => `Hello, I would like to receive information about: ${titolo} on ${giorno} ${mese}.`,
+  nessunEvento: 'There are currently no one-off events scheduled in the training room. Upcoming initiatives will be published here as soon as they are scheduled.',
+  contattaci: 'Contact us for information'
+} : {
+  vaiA: 'Vai a: ',
+  nessuno: 'Nessun appuntamento in programma al momento: contattaci per essere aggiornato sulle prossime date.',
+  corso: 'Corso', evento: 'Evento',
+  info: 'Richiedi info',
+  wa: (titolo, giorno, mese) => `Salve, vorrei ricevere informazioni su: ${titolo} del ${giorno} ${mese}.`,
+  nessunEvento: 'Al momento non ci sono eventi una tantum in programma nella sala corsi. Le prossime iniziative saranno pubblicate qui non appena calendarizzate.',
+  contattaci: 'Contattaci per informazioni'
+};
 
 let corsiCalYear, corsiCalMonth;
 
 function corsiEventiConData() {
-  return CORSI_EVENTI.map(e => ({ ...e, dateObj: new Date(e.data + 'T00:00:00') }));
+  return CORSI_EVENTI.map(e => ({
+    ...e,
+    titolo: (CORSI_EN && e.titolo_en) || e.titolo,
+    descrizione: (CORSI_EN && e.descrizione_en) || e.descrizione,
+    dateObj: new Date(e.data + 'T00:00:00')
+  }));
 }
 
 function corsiOggi() {
@@ -129,7 +173,7 @@ function renderCalendario(anno, mese) {
 
       cella.setAttribute('role', 'button');
       cella.setAttribute('tabindex', '0');
-      cella.setAttribute('aria-label', `Vai a: ${eventiGiorno.map(e => e.titolo).join(', ')}`);
+      cella.setAttribute('aria-label', CORSI_TXT.vaiA + eventiGiorno.map(e => e.titolo).join(', '));
       const idsGiorno = eventiGiorno.map(e => e.id);
       const vaiAgliEventiDelGiorno = () => corsiVaiAEvento(idsGiorno);
       cella.addEventListener('click', vaiAgliEventiDelGiorno);
@@ -188,7 +232,7 @@ function renderAgenda() {
   const prossimi = corsiEventiConData().filter(e => e.dateObj >= oggi).sort((a, b) => a.dateObj - b.dateObj);
 
   if (!prossimi.length) {
-    list.innerHTML = '<p class="agenda-empty">Nessun appuntamento in programma al momento: contattaci per essere aggiornato sulle prossime date.</p>';
+    list.innerHTML = `<p class="agenda-empty">${CORSI_TXT.nessuno}</p>`;
     return;
   }
 
@@ -199,12 +243,12 @@ function renderAgenda() {
         <span class="agenda-month">${CORSI_MESI_MIN[ev.dateObj.getMonth()]}</span>
       </div>
       <div class="agenda-body">
-        <span class="agenda-badge agenda-badge-${ev.tipo}">${ev.tipo === 'corso' ? 'Corso' : 'Evento'}</span>
+        <span class="agenda-badge agenda-badge-${ev.tipo}">${ev.tipo === 'corso' ? CORSI_TXT.corso : CORSI_TXT.evento}</span>
         <h3>${ev.titolo}</h3>
         <p>${ev.descrizione}</p>
         <span class="agenda-meta">${CORSI_GIORNI[ev.dateObj.getDay()]} ${ev.dateObj.getDate()} ${CORSI_MESI[ev.dateObj.getMonth()]}${ev.orario ? ' · ' + ev.orario : ''}</span>
       </div>
-      <a href="#" class="btn btn-sm btn-primary" data-wa-message="Salve, vorrei ricevere informazioni su: ${ev.titolo} del ${ev.dateObj.getDate()} ${CORSI_MESI[ev.dateObj.getMonth()]}.">Richiedi info</a>
+      <a href="#" class="btn btn-sm btn-primary" data-wa-message="${CORSI_TXT.wa(ev.titolo, ev.dateObj.getDate(), CORSI_MESI[ev.dateObj.getMonth()])}">${CORSI_TXT.info}</a>
     </div>
   `).join('');
 
@@ -220,8 +264,8 @@ function renderEventiSalaCorsi() {
   if (!eventi.length) {
     wrap.innerHTML = `
       <div class="eventi-empty">
-        <p>Al momento non ci sono eventi una tantum in programma nella sala corsi. Le prossime iniziative saranno pubblicate qui non appena calendarizzate.</p>
-        <a href="contatti.html" class="btn btn-outline">Contattaci per informazioni</a>
+        <p>${CORSI_TXT.nessunEvento}</p>
+        <a href="contatti.html" class="btn btn-outline">${CORSI_TXT.contattaci}</a>
       </div>`;
     return;
   }
@@ -230,12 +274,12 @@ function renderEventiSalaCorsi() {
     <div class="evento-card" id="evento-item-${ev.id}">
       ${ev.immagine ? `<img src="${ev.immagine}" alt="${ev.titolo}">` : ''}
       <div class="evento-card-body">
-        <span class="agenda-badge agenda-badge-evento">Evento</span>
+        <span class="agenda-badge agenda-badge-evento">${CORSI_TXT.evento}</span>
         <h3>${ev.titolo}</h3>
         <p>${ev.descrizione}</p>
         <span class="agenda-meta">${CORSI_GIORNI[ev.dateObj.getDay()]} ${ev.dateObj.getDate()} ${CORSI_MESI[ev.dateObj.getMonth()]}${ev.orario ? ' · ' + ev.orario : ''}</span>
         <div style="margin-top:16px;">
-          <a href="#" class="btn btn-sm btn-primary" data-wa-message="Salve, vorrei ricevere informazioni su: ${ev.titolo} del ${ev.dateObj.getDate()} ${CORSI_MESI[ev.dateObj.getMonth()]}.">Richiedi info</a>
+          <a href="#" class="btn btn-sm btn-primary" data-wa-message="${CORSI_TXT.wa(ev.titolo, ev.dateObj.getDate(), CORSI_MESI[ev.dateObj.getMonth()])}">${CORSI_TXT.info}</a>
         </div>
       </div>
     </div>

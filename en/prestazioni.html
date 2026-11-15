@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9B1K1F1HL9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { 'analytics_storage': 'denied' });
+  gtag('js', new Date());
+  gtag('config', 'G-9B1K1F1HL9');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services and Fees | Poliambulatorio Delta Catania</title>
+<meta name="description" content="Full list of services at Poliambulatorio Delta in Catania: cardiology, endocrinology, nutrition, orthopaedics, osteopathy, ENT, haematology, rheumatology, occupational medicine.">
+<link rel="canonical" href="https://poliambulatoriodelta.it/en/prestazioni.html">
+<link rel="alternate" hreflang="it" href="https://poliambulatoriodelta.it/prestazioni.html">
+<link rel="alternate" hreflang="en" href="https://poliambulatoriodelta.it/en/prestazioni.html">
+<link rel="alternate" hreflang="x-default" href="https://poliambulatoriodelta.it/prestazioni.html">
+<meta name="geo.region" content="IT-CT">
+<meta name="geo.placename" content="Catania">
+<meta name="geo.position" content="37.5293199;15.0978039">
+<meta name="ICBM" content="37.5293199, 15.0978039">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Services and Fees | Poliambulatorio Delta Catania">
+<meta property="og:description" content="Full list of services at Poliambulatorio Delta in Catania: cardiology, endocrinology, nutrition, orthopaedics, osteopathy, ENT, haematology, rheumatology, occupational medicine.">
+<meta property="og:url" content="https://poliambulatoriodelta.it/en/prestazioni.html">
+<meta property="og:image" content="https://poliambulatoriodelta.it/images/logo-full.png">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Services and Fees | Poliambulatorio Delta Catania">
+<meta name="twitter:description" content="Full list of services at Poliambulatorio Delta in Catania: cardiology, endocrinology, nutrition, orthopaedics, osteopathy, ENT, haematology, rheumatology, occupational medicine.">
+<meta name="twitter:image" content="https://poliambulatoriodelta.it/images/logo-full.png">
+
+<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/style.css?v=5">
+<style>
+  .filter-bar { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:48px; }
+  .filter-bar button {
+    background: var(--white); border:1px solid var(--border); color: var(--slate);
+    padding: 9px 18px; border-radius: 999px; font-size: 0.86rem; font-weight: 600;
+    transition: all 0.2s;
+  }
+  .filter-bar button:hover { border-color: var(--sky); color: var(--sky); }
+  .filter-bar button.active-filter { background: var(--navy-900); border-color: var(--navy-900); color: white; }
+
+  .service-group { margin-bottom: 64px; scroll-margin-top: 90px; }
+  .service-group-head { display:flex; align-items:center; gap:16px; margin-bottom:24px; padding-bottom:16px; border-bottom: 2px solid var(--mist-dark); }
+  .service-group-head .branch-icon { margin-bottom:0; }
+  .service-group-head h2 { font-size:1.6rem; margin-bottom: 0; }
+
+  .service-table { width:100%; border-collapse: collapse; background:white; border-radius: var(--radius-md); overflow:hidden; border:1px solid var(--border); }
+  .service-table th { text-align:left; background: var(--mist); color: var(--navy-900); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.04em; padding: 14px 18px; }
+  .service-table td { padding: 16px 18px; border-top: 1px solid var(--border); font-size: 0.94rem; }
+  .service-table td.price { white-space: nowrap; text-align:right; font-size: 0.88rem; }
+  .service-table td.price a { color: var(--terracotta); font-weight: 700; }
+  .service-table td.price a:hover { color: var(--terracotta-dark); text-decoration: underline; }
+  .service-table tr:hover td { background: var(--cream); }
+  .service-desc { color: var(--slate-light); font-size: 0.86rem; display:block; margin-top:3px; }
+
+  .group-cta { margin-top: 20px; display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; }
+  .info-btn { display:inline-flex; align-items:center; gap:6px; }
+  .info-btn svg { width:16px; height:16px; }
+
+  .price-note {
+    background: var(--terracotta-light); border-left: 3px solid var(--terracotta);
+    padding: 16px 20px; border-radius: var(--radius-sm); font-size:0.88rem; color: var(--navy-900); margin-bottom: 48px;
+  }
+
+  /* Popup "Come prepararsi" */
+  .info-modal { position:fixed; inset:0; background:rgba(0,20,33,0.55); z-index:400; display:none; align-items:center; justify-content:center; padding:20px; }
+  .info-modal.open { display:flex; }
+  .info-modal-box { background:var(--white); border-radius:var(--radius-lg); padding:32px; max-width:480px; width:100%; max-height:85vh; overflow-y:auto; box-shadow:var(--shadow-lg); position:relative; }
+  .info-modal-close { position:absolute; top:16px; right:16px; width:34px; height:34px; border-radius:50%; border:none; background:var(--mist); color:var(--navy-900); font-size:1.3rem; line-height:1; }
+  .info-modal-close:hover { background:var(--mist-dark); }
+  .info-modal-box .info-modal-eyebrow { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--terracotta); display:block; margin-bottom:8px; }
+  .info-modal-box h3 { font-size:1.25rem; margin-bottom:18px; padding-right:30px; }
+  .info-modal-box ul { margin:0; padding-left:20px; list-style:disc; }
+  .info-modal-box li { font-size:0.92rem; line-height:1.55; color:var(--slate); margin-bottom:11px; }
+  .info-modal-box li:last-child { margin-bottom:0; }
+  .info-modal-box li::marker { color:var(--terracotta); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Poliambulatorio Delta",
+  "image": "https://poliambulatoriodelta.it/images/logo-full.png",
+  "url": "https://poliambulatoriodelta.it/",
+  "telephone": "+39-095-2904796",
+  "email": "segreteria@poliambulatoriodelta.it",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Viale Marco Polo, 2",
+    "addressLocality": "Catania",
+    "postalCode": "95126",
+    "addressRegion": "CT",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.5293199,
+    "longitude": 15.0978039
+  },
+  "hasMap": "https://www.google.com/maps?q=Viale+Marco+Polo+2,+95126+Catania+CT",
+  "areaServed": {
+    "@type": "City",
+    "name": "Catania"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday","Friday"], "opens": "09:00", "closes": "13:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Thursday"], "opens": "16:00", "closes": "19:00" }
+  ],
+  "medicalSpecialty": [
+    "Cardiology", "Endocrinology", "Nutrition", "Orthopedic", "Osteopathic",
+    "Otolaryngology", "Hematology", "Rheumatology", "Occupational Medicine"
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-link">
+      <div class="logo-placeholder"><img src="../images/logo-full.png" alt="Poliambulatorio Delta logo"></div>
+      <div class="logo-text">Poliambulatorio Delta<span>Catania</span></div>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prestazioni.html" class="active">Services</a></li>
+        <li><a href="corsi.html">Courses</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="struttura.html">Facility</a></li>
+        <li><a href="contatti.html">Contact</a></li>
+        <li><a href="blog.html">Articles</a></li>
+      </ul>
+      <a href="contatti.html#prenota" class="btn btn-primary header-cta-desktop">Book now</a>
+      <div class="lang-switch" role="group" aria-label="Language"><a href="../prestazioni.html" lang="it" hreflang="it" title="Versione italiana">IT</a><span class="lang-current" lang="en" aria-current="true">EN</span></div>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav-backdrop"></div>
+<div class="mobile-nav">
+  <div class="mobile-nav-top">
+    <div class="mobile-nav-brand">
+      <img src="../images/logo-icon.png" alt="Delta">
+      <span>Poliambulatorio Delta</span>
+    </div>
+    <button class="mobile-nav-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <span class="mobile-nav-eyebrow">Menu</span>
+  <ul>
+    <li><a href="index.html"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>Home<svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a></li>
+    <li><a href="prestazioni.html" class="active"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span>Services<svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a></li>
+    <li><a href="corsi.html"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>Courses &amp; Events<svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a></li>
+    <li><a href="staff.html"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Staff<svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a></li>
+    <li><a href="struttura.html"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg></span>Facility<svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a></li>
+    <li><a href="contatti.html"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Contact<svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a></li>
+    <li><a href="blog.html"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>Articles<svg class="mobile-nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a></li>
+  </ul>
+  <div class="mobile-lang-switch"><a href="../prestazioni.html" lang="it" hreflang="it">Italiano</a><span class="lang-current" lang="en">English</span></div>
+  <div class="mobile-nav-bottom">
+    <a href="contatti.html#prenota" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Book now</a>
+    <div class="mobile-nav-quicklinks">
+      <a href="#" data-wa-message="Hello, I would like to book an appointment at Poliambulatorio Delta. Could you let me know the first available date?"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>WhatsApp</a>
+      <a href="tel:+390952904796"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+    </div>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Services</div>
+    <span class="eyebrow">Public price list</span>
+    <h1>Services and fees</h1>
+    <p>The full list of consultations and tests available for each speciality. To book, use the WhatsApp button next to each speciality.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="price-note">
+      <strong>Note on fees:</strong> our price list is currently being updated. To find out the cost of a service, contact our front desk: we will reply with all the information you need.
+    </div>
+
+    <div class="filter-bar" id="service-filter">
+      <button data-filter="tutte" class="active-filter">All specialities</button>
+      <button data-filter="cardiologia">Cardiology</button>
+      <button data-filter="endocrinologia">Endocrinology and Diabetology</button>
+      <button data-filter="nutrizionistica">Nutrition</button>
+      <button data-filter="ortopedia">Orthopaedics</button>
+      <button data-filter="osteopatia">Osteopathy</button>
+      <button data-filter="otorino">Otolaryngology (ENT)</button>
+      <button data-filter="ematologia">Haematology</button>
+      <button data-filter="reumatologia">Rheumatology</button>
+      <button data-filter="medicina-lavoro">Occupational Medicine</button>
+    </div>
+
+    <!-- CARDIOLOGIA -->
+    <div class="service-group" id="cardiologia" data-service-group="cardiologia">
+      <div class="service-group-head">
+        <div class="branch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><path d="M4.5 12.5h3l1.5-3 2.5 6 1.5-3h3.5"/></svg></div>
+        <h2>Cardiology</h2>
+      </div>
+      <table class="service-table">
+        <thead><tr><th>Service</th><th style="text-align:right">Info</th></tr></thead>
+        <tbody>
+          <tr><td>Cardiology Consultation</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Electrocardiogram (ECG)</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Cardiology Consultation + ECG</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Echocardiogram (Cardiac Ultrasound)</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Cardiac Colour Doppler Ultrasound</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Cardiology Consultation, ECG, Colour Doppler Ultrasound<span class="service-desc">Complete package</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Colour Doppler Ultrasound of the Supra-Aortic Vessels (Carotid)</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Venous Colour Doppler Ultrasound of the Lower Limbs</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Arterial and Venous Colour Doppler Ultrasound of the Lower Limbs</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>24-Hour Holter ECG Monitoring</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>24-Hour Ambulatory Blood Pressure Monitoring</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+        </tbody>
+      </table>
+      <div class="group-cta">
+        <a href="cardiologia-catania.html" class="btn btn-sm btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>About Cardiology</a>
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="cardiologia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>How to prepare</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Cardiology">Book Cardiology</a>
+      </div>
+    </div>
+
+    <!-- ENDOCRINOLOGIA -->
+    <div class="service-group" id="endocrinologia" data-service-group="endocrinologia">
+      <div class="service-group-head">
+        <div class="branch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.8" cy="12" r="3.2"/><circle cx="15.2" cy="12" r="3.2"/><path d="M12 6v2.5M12 15.5v2.5"/></svg></div>
+        <h2>Endocrinology and Diabetology</h2>
+      </div>
+      <table class="service-table">
+        <thead><tr><th>Service</th><th style="text-align:right">Info</th></tr></thead>
+        <tbody>
+          <tr><td>Endocrinology Consultation<span class="service-desc">Assessment of thyroid, metabolism, diabetes and hormonal disorders</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Thyroid and Parathyroid Ultrasound</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+        </tbody>
+      </table>
+      <div class="group-cta">
+        <a href="endocrinologia-diabetologia-catania.html" class="btn btn-sm btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>About Endocrinology and Diabetology</a>
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="endocrinologia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>How to prepare</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Endocrinology and Diabetology">Book Endocrinology</a>
+      </div>
+    </div>
+
+    <!-- NUTRIZIONISTICA -->
+    <div class="service-group" id="nutrizionistica" data-service-group="nutrizionistica">
+      <div class="service-group-head">
+        <div class="branch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20c-3.5 0-6-3.2-6-6.8 0-3 1.7-5.2 4-5.2 1 0 1.5.5 2 .5s1-.5 2-.5c2.3 0 4 2.2 4 5.2 0 3.6-2.5 6.8-6 6.8z"/><path d="M12 8V4.5"/><path d="M12 4.8c1.2-1.4 3-1.6 4-.6"/></svg></div>
+        <h2>Nutrition</h2>
+      </div>
+      <table class="service-table">
+        <thead><tr><th>Service</th><th style="text-align:right">Info</th></tr></thead>
+        <tbody>
+          <tr><td>Nutrition Consultation<span class="service-desc">Dietary history, anthropometric assessment and personalised plan</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+        </tbody>
+      </table>
+      <div class="group-cta">
+        <a href="nutrizionistica-catania.html" class="btn btn-sm btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>About Nutrition</a>
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="nutrizionistica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>How to prepare</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Nutrition">Book Nutrition</a>
+      </div>
+    </div>
+
+    <!-- ORTOPEDIA -->
+    <div class="service-group" id="ortopedia" data-service-group="ortopedia">
+      <div class="service-group-head">
+        <div class="branch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></div>
+        <h2>Orthopaedics</h2>
+      </div>
+      <table class="service-table">
+        <thead><tr><th>Service</th><th style="text-align:right">Info</th></tr></thead>
+        <tbody>
+          <tr><td>Orthopaedic Consultation</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Joint Injections</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Joint Ultrasound<span class="service-desc">Shoulder, knee, hip, elbow, wrist, ankle</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Muscle and Tendon Ultrasound</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Soft Tissue Ultrasound</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+        </tbody>
+      </table>
+      <div class="group-cta">
+        <a href="ortopedia-catania.html" class="btn btn-sm btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>About Orthopaedics</a>
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="ortopedia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>How to prepare</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Orthopaedics">Book Orthopaedics</a>
+      </div>
+    </div>
+
+    <!-- OSTEOPATIA -->
+    <div class="service-group" id="osteopatia" data-service-group="osteopatia">
+      <div class="service-group-head">
+        <div class="branch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18"/><path d="M8.7 6.2h6.6M8.7 10.1h6.6M8.7 14h6.6M8.7 17.9h6.6"/></svg></div>
+        <h2>Osteopathy</h2>
+      </div>
+      <table class="service-table">
+        <thead><tr><th>Service</th><th style="text-align:right">Info</th></tr></thead>
+        <tbody>
+          <tr><td>Osteopathy Consultation<span class="service-desc">Postural assessment and manipulative treatment</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+        </tbody>
+      </table>
+      <div class="group-cta">
+        <a href="osteopatia-catania.html" class="btn btn-sm btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>About Osteopathy</a>
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="osteopatia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>How to prepare</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Osteopathy">Book Osteopathy</a>
+      </div>
+    </div>
+
+    <!-- OTORINO -->
+    <div class="service-group" id="otorino" data-service-group="otorino">
+      <div class="service-group-head">
+        <div class="branch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8.5 14a5 5 0 0 1 4.7-8.4A6 6 0 0 1 18.5 11.5c0 2.2-1.1 3.2-2.1 4.3s-1.7 2.1-1.7 3.7a2.35 2.35 0 0 1-4.7 0"/><path d="M10.3 14a2.1 2.1 0 0 0 2.1 2.1"/></svg></div>
+        <h2>Otolaryngology (ENT)</h2>
+      </div>
+      <table class="service-table">
+        <thead><tr><th>Service</th><th style="text-align:right">Info</th></tr></thead>
+        <tbody>
+          <tr><td>ENT Consultation</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Ear Irrigation (Earwax Removal)</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+        </tbody>
+      </table>
+      <div class="group-cta">
+        <a href="otorinolaringoiatria-catania.html" class="btn btn-sm btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>About ENT</a>
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="otorino"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>How to prepare</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="ENT (Otolaryngology)">Book ENT</a>
+      </div>
+    </div>
+
+    <!-- EMATOLOGIA -->
+    <div class="service-group" id="ematologia" data-service-group="ematologia">
+      <div class="service-group-head">
+        <div class="branch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3.3s6.2 7.2 6.2 11.3a6.2 6.2 0 0 1-12.4 0C5.8 10.5 12 3.3 12 3.3z"/></svg></div>
+        <h2>Haematology</h2>
+      </div>
+      <table class="service-table">
+        <thead><tr><th>Service</th><th style="text-align:right">Info</th></tr></thead>
+        <tbody>
+          <tr><td>Haematology Consultation</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Complete Abdominal Ultrasound<span class="service-desc">Spleen, liver, lymph nodes</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Lymph Node Ultrasound<span class="service-desc">Neck, armpit, groin, abdomen</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Venous Colour Doppler Ultrasound<span class="service-desc">Thrombosis screening</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+        </tbody>
+      </table>
+      <div class="group-cta">
+        <a href="ematologia-catania.html" class="btn btn-sm btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>About Haematology</a>
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="ematologia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>How to prepare</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Haematology">Book Haematology</a>
+      </div>
+    </div>
+
+    <!-- REUMATOLOGIA -->
+    <div class="service-group" id="reumatologia" data-service-group="reumatologia">
+      <div class="service-group-head">
+        <div class="branch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 19l4.3-4.3"/><path d="M14.7 9.3L19 5"/><path d="M9.3 14.7a3.6 3.6 0 0 0 5.1-5.1"/><path d="M15.8 5.3l1.1 1.1M17.6 3.5l1.1 1.1"/></svg></div>
+        <h2>Rheumatology</h2>
+      </div>
+      <table class="service-table">
+        <thead><tr><th>Service</th><th style="text-align:right">Info</th></tr></thead>
+        <tbody>
+          <tr><td>Rheumatology Consultation</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Multi-Site Joint Ultrasound<span class="service-desc">Hands, wrists, feet, knees, shoulders</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+        </tbody>
+      </table>
+      <div class="group-cta">
+        <a href="reumatologia-catania.html" class="btn btn-sm btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>About Rheumatology</a>
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="reumatologia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>How to prepare</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Rheumatology">Book Rheumatology</a>
+      </div>
+    </div>
+
+    <!-- MEDICINA DEL LAVORO -->
+    <div class="service-group" id="medicina-lavoro" data-service-group="medicina-lavoro">
+      <div class="service-group-head">
+        <div class="branch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
+        <h2>Occupational Medicine</h2>
+      </div>
+      <table class="service-table">
+        <thead><tr><th>Service</th><th style="text-align:right">Info</th></tr></thead>
+        <tbody>
+          <tr><td>Health Surveillance<span class="service-desc">Medical examination under Italian Legislative Decree 81/08</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Spirometry</td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Toxicology Tests<span class="service-desc">Urine test, 10-parameter kit</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+          <tr><td>Corporate agreements<span class="service-desc">Dedicated rates for company packages: contact our front desk</span></td><td class="price"><a href="contatti.html#prenota">Contact us for info</a></td></tr>
+        </tbody>
+      </table>
+      <div class="group-cta">
+        <a href="medicina-lavoro-catania.html" class="btn btn-sm btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>About Occupational Medicine</a>
+        <button type="button" class="btn btn-sm btn-outline info-btn" data-info="medicina-lavoro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>How to prepare</button>
+        <a href="#" class="btn btn-sm btn-primary" data-wa-branch="Occupational Medicine">Book Occupational Medicine</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-link">
+        <div class="logo-placeholder"><img src="../images/logo-full.png" alt="Poliambulatorio Delta logo"></div>
+        <div class="logo-text">Poliambulatorio Delta<span>Catania</span></div>
+      </div>
+      <p>Nine medical specialities under one roof in Catania. Coordinated check-ups, with no waiting times.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/poliambulatorio_delta?igsi=MWJkbTJwaWhlbGxuMw==" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul><li><a href="prestazioni.html">Services</a></li><li><a href="staff.html">Medical staff</a></li><li><a href="struttura.html">The facility</a></li><li><a href="corsi.html">Courses and events</a></li><li><a href="blog.html">Articles</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Specialities</h4>
+      <ul><li><a href="prestazioni.html#cardiologia">Cardiology</a></li><li><a href="prestazioni.html#ortopedia">Orthopaedics</a></li><li><a href="prestazioni.html#otorino">Otolaryngology (ENT)</a></li><li><a href="prestazioni.html">All specialities →</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul><li>Viale Marco Polo, 2 — 95126 Catania, Italy</li><li>segreteria@poliambulatoriodelta.it</li><li>Mon/Wed/Fri 9:00–13:00</li><li>Tue/Thu 16:00–19:00</li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Poliambulatorio Delta — VAT no. 06156260876</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a> · <a href="cookie-policy.html">Cookie Policy</a></span>
+  </div>
+</footer>
+
+<a href="#" class="wa-float" aria-label="Book on WhatsApp" data-wa-message="Hello, I would like to book an appointment at Poliambulatorio Delta. Could you let me know the first available date?">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.83 14.13c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11a16 16 0 0 1-1.61-.6c-2.83-1.22-4.68-4.06-4.82-4.25-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07.99-2.35.26-.28.56-.35.75-.35h.53c.17 0 .4-.03.62.48.24.57.82 1.96.89 2.1.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+</a>
+
+<!-- POPUP "COME PREPARARSI" -->
+<div class="info-modal" id="info-modal">
+  <div class="info-modal-box">
+    <button type="button" class="info-modal-close" aria-label="Close">&times;</button>
+    <span class="info-modal-eyebrow">How to prepare</span>
+    <h3 id="info-modal-title"></h3>
+    <div id="info-modal-body"></div>
+  </div>
+</div>
+
+<script>
+  // Indicazioni di preparazione per branca — BOZZA da confermare con la segreteria
+  const PREP_INFO = {
+    cardiologia: {
+      titolo: 'Cardiology',
+      testo: [
+        "No specific preparation is required.",
+        "Wear comfortable clothes that are easy to remove for the placement of the electrodes.",
+        "Avoid creams or oils on the skin of your chest on the day of the test.",
+        "If an ECG is planned, avoid coffee, smoking and intense physical effort in the hour beforehand, so as not to alter the trace.",
+        "For ECG and Holter monitoring, if possible, remove hair from the chest area.",
+        "Bring a list of the medicines you take and any previous ECGs or echocardiograms, for comparison.",
+        "Tell us if you take anticoagulant medicines.",
+        "Mention any family history of heart disease."
+      ]
+    },
+    endocrinologia: {
+      titolo: 'Endocrinology and Diabetology',
+      testo: [
+        "For blood tests, fasting for at least 8 hours is required.",
+        "No specific preparation is needed for the thyroid and parathyroid ultrasound.",
+        "Continue taking your medicines as usual, unless told otherwise, but tell us about all of them — especially hormone or thyroid therapies.",
+        "For the oral glucose tolerance test, follow the laboratory's specific instructions (stricter fasting).",
+        "Bring your previous hormone test results.",
+        "Tell us if you are pregnant."
+      ]
+    },
+    nutrizionistica: {
+      titolo: 'Nutrition',
+      testo: [
+        "No specific preparation is required.",
+        "If available, bring a food diary covering the last few weeks.",
+        "Weigh yourself, if possible on an empty stomach and in light clothing, on the morning of the appointment.",
+        "Bring your most recent blood tests (blood glucose, cholesterol, triglycerides).",
+        "Tell us about any food allergies and intolerances.",
+        "Avoid changing your diet drastically in the days before your first appointment, so as not to distort the initial assessment."
+      ]
+    },
+    ortopedia: {
+      titolo: 'Orthopaedics',
+      testo: [
+        "No specific preparation is required.",
+        "Wear comfortable clothes that make it easy to uncover the area to be examined (e.g. shorts for the knee or hip).",
+        "Bring a list of the painkillers you have taken.",
+        "Bring any previous imaging tests (X-rays, MRI scans, ultrasounds).",
+        "Note down the date and circumstances of any recent injuries."
+      ]
+    },
+    osteopatia: {
+      titolo: 'Osteopathy',
+      testo: [
+        "Wear comfortable clothes that let you move freely during the treatment.",
+        "Avoid intense physical effort just before the session.",
+        "Avoid heavy meals in the hours immediately beforehand.",
+        "Tell us about any surgery, fractures or a current pregnancy."
+      ]
+    },
+    otorino: {
+      titolo: 'Otolaryngology (ENT)',
+      testo: [
+        "No specific preparation is required for the consultation.",
+        "Avoid cleaning your ears deeply (cotton buds) in the days beforehand, so as not to remove signs that are useful for the diagnosis.",
+        "If a hearing test is planned, avoid exposure to loud noise in the 24–48 hours beforehand.",
+        "Bring any past hearing tests or ENT examinations.",
+        "Tell us about any current ear infection or previously diagnosed perforated eardrum."
+      ]
+    },
+    ematologia: {
+      titolo: 'Haematology',
+      testo: [
+        "For blood tests, fasting for at least 8–12 hours is required.",
+        "Water is still allowed while fasting: stay well hydrated.",
+        "Avoid intense physical activity before the blood test.",
+        "Tell us if you take anticoagulants or antiplatelet medicines.",
+        "Bring your previous full blood counts or haematology tests."
+      ]
+    },
+    reumatologia: {
+      titolo: 'Rheumatology',
+      testo: [
+        "No specific preparation is required for the consultation.",
+        "Bring any X-rays or MRI scans.",
+        "Note down which joints hurt and for how long, including how long morning stiffness lasts.",
+        "List the medicines you take, especially anti-inflammatories or corticosteroids."
+      ]
+    },
+    'medicina-lavoro': {
+      titolo: 'Occupational Medicine',
+      testo: [
+        "Follow any specific instructions provided for your job role or by your employer.",
+        "Bring a valid identity document and any previous fitness-for-work certificates.",
+        "If spirometry is planned, avoid smoking in the hours beforehand.",
+        "If a hearing test is planned, avoid exposure to loud noise in the hours beforehand.",
+        "Tell us about any recent illnesses that could affect the fitness assessment.",
+        "For urine toxicology tests, ask our front desk for confirmation when booking."
+      ]
+    }
+  };
+
+  function initInfoModal() {
+    const modal = document.getElementById('info-modal');
+    const title = document.getElementById('info-modal-title');
+    const body = document.getElementById('info-modal-body');
+    if (!modal) return;
+
+    function open(key) {
+      const data = PREP_INFO[key];
+      if (!data) return;
+      title.textContent = data.titolo;
+      body.innerHTML = '<ul>' + data.testo.map(p => `<li>${p}</li>`).join('') + '</ul>';
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.info-btn').forEach(btn => {
+      btn.addEventListener('click', () => open(btn.getAttribute('data-info')));
+    });
+    modal.querySelector('.info-modal-close').addEventListener('click', close);
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+  }
+
+  document.addEventListener('DOMContentLoaded', initInfoModal);
+</script>
+
+<div class="cookie-banner" id="cookie-banner">
+  <div class="cookie-banner-inner">
+    <div class="cookie-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8.5 9.5h.01M15.5 9.5h.01"/><path d="M8.5 14.5c1 1 2.2 1.5 3.5 1.5s2.5-.5 3.5-1.5"/></svg></div>
+    <h3>Your privacy matters to us</h3>
+    <p>We use technical cookies that are necessary for the website to work and, only with your consent, third-party cookies for statistical purposes (Google Analytics) and for the map on the Contact page (Google Maps). To find out more, read our <a href="cookie-policy.html">Cookie Policy</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-primary cookie-accept">Accept all</button>
+      <button type="button" class="btn btn-outline cookie-reject">Necessary only</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="../js/main.js?v=2"></script>
+</body>
+</html>
