@@ -27,16 +27,6 @@ const CORSI_EVENTI = [
     descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
   },
   {
-    id: 'checkup-2026-10-16',
-    tipo: 'evento',
-    titolo: 'Giornata Check-Up Base',
-    titolo_en: 'Basic Check-Up Day',
-    data: '2026-10-16',
-    orario: '9:00–13:00',
-    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue.",
-    descrizione_en: "A day dedicated to the Complete Basic Check-Up: general medical examination, electrocardiogram, spirometry and blood tests."
-  },
-  {
     id: 'checkup-2026-11-20',
     tipo: 'evento',
     titolo: 'Giornata Check-Up Base',
