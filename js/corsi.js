@@ -27,6 +27,26 @@ const CORSI_EVENTI = [
     descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
   },
   {
+    id: 'checkup-2026-10-16',
+    tipo: 'evento',
+    titolo: 'Giornata Check-Up Base',
+    titolo_en: 'Basic Check-Up Day',
+    data: '2026-10-16',
+    orario: '9:00–13:00',
+    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue.",
+    descrizione_en: "A day dedicated to the Complete Basic Check-Up: general medical examination, electrocardiogram, spirometry and blood tests."
+  },
+  {
+    id: 'checkup-2026-11-20',
+    tipo: 'evento',
+    titolo: 'Giornata Check-Up Base',
+    titolo_en: 'Basic Check-Up Day',
+    data: '2026-11-20',
+    orario: '8:00',
+    descrizione: "Giornata dedicata ai Check-Up Base Completo: visita medica generale, elettrocardiogramma, spirometria e analisi del sangue.",
+    descrizione_en: "A day dedicated to the Complete Basic Check-Up: general medical examination, electrocardiogram, spirometry and blood tests."
+  },
+  {
     id: 'primo-soccorso-2026-11-07',
     tipo: 'corso',
     titolo: 'Corso di Primo Soccorso',
@@ -72,7 +92,8 @@ const CORSI_TXT = CORSI_EN ? {
   info: 'Request info',
   wa: (titolo, giorno, mese) => `Hello, I would like to receive information about: ${titolo} on ${giorno} ${mese}.`,
   nessunEvento: 'There are currently no one-off events scheduled in the training room. Upcoming initiatives will be published here as soon as they are scheduled.',
-  contattaci: 'Contact us for information'
+  contattaci: 'Contact us for information',
+  svolto: 'Held'
 } : {
   vaiA: 'Vai a: ',
   nessuno: 'Nessun appuntamento in programma al momento: contattaci per essere aggiornato sulle prossime date.',
@@ -80,7 +101,8 @@ const CORSI_TXT = CORSI_EN ? {
   info: 'Richiedi info',
   wa: (titolo, giorno, mese) => `Salve, vorrei ricevere informazioni su: ${titolo} del ${giorno} ${mese}.`,
   nessunEvento: 'Al momento non ci sono eventi una tantum in programma nella sala corsi. Le prossime iniziative saranno pubblicate qui non appena calendarizzate.',
-  contattaci: 'Contattaci per informazioni'
+  contattaci: 'Contattaci per informazioni',
+  svolto: 'Già svolto'
 };
 
 let corsiCalYear, corsiCalMonth;
@@ -133,7 +155,8 @@ function renderCalendario(anno, mese) {
     const eventiGiorno = eventi.filter(e => e.data === dataStr);
 
     const cella = document.createElement('div');
-    cella.className = 'cal-day' + (eventiGiorno.length ? ' cal-day-active' : '');
+    const giornoPassato = new Date(dataStr + 'T00:00:00') < corsiOggi();
+    cella.className = 'cal-day' + (eventiGiorno.length ? ' cal-day-active' : '') + (eventiGiorno.length && giornoPassato ? ' cal-day-past' : '');
 
     const num = document.createElement('span');
     num.className = 'cal-day-num';
@@ -239,31 +262,44 @@ function renderEventiSalaCorsi() {
   const wrap = document.getElementById('eventi-list');
   if (!wrap) return;
 
-  const eventi = corsiEventiConData().filter(e => e.tipo === 'evento').sort((a, b) => a.dateObj - b.dateObj);
+  // Prima gli eventi in programma, poi quelli già svolti (dal più recente)
+  const oggi = corsiOggi();
+  const tutti = corsiEventiConData().filter(e => e.tipo === 'evento');
+  const prossimi = tutti.filter(e => e.dateObj >= oggi).sort((a, b) => a.dateObj - b.dateObj);
+  const passati = tutti.filter(e => e.dateObj < oggi).sort((a, b) => b.dateObj - a.dateObj);
+  const eventi = prossimi.concat(passati);
 
-  if (!eventi.length) {
-    wrap.innerHTML = `
+  const vuoto = `
       <div class="eventi-empty">
         <p>${CORSI_TXT.nessunEvento}</p>
         <a href="contatti.html" class="btn btn-outline">${CORSI_TXT.contattaci}</a>
       </div>`;
+
+  if (!eventi.length) {
+    wrap.innerHTML = vuoto;
     return;
   }
 
-  wrap.innerHTML = `<div class="eventi-grid">${eventi.map(ev => `
-    <div class="evento-card" id="evento-item-${ev.id}">
-      ${ev.immagine ? `<img src="${ev.immagine}" alt="${ev.titolo}">` : ''}
-      <div class="evento-card-body">
-        <span class="agenda-badge agenda-badge-evento">${CORSI_TXT.evento}</span>
-        <h3>${ev.titolo}</h3>
-        <p>${ev.descrizione}</p>
-        <span class="agenda-meta">${CORSI_GIORNI[ev.dateObj.getDay()]} ${ev.dateObj.getDate()} ${CORSI_MESI[ev.dateObj.getMonth()]}${ev.orario ? ' · ' + ev.orario : ''}</span>
+  const card = ev => {
+    const svolto = ev.dateObj < oggi;
+    const badgeSvolto = svolto ? `<span class="agenda-badge agenda-badge-svolto">${CORSI_TXT.svolto}</span>` : '';
+    const bottone = svolto ? '' : `
         <div style="margin-top:16px;">
           <a href="#" class="btn btn-sm btn-primary" data-wa-message="${CORSI_TXT.wa(ev.titolo, ev.dateObj.getDate(), CORSI_MESI[ev.dateObj.getMonth()])}">${CORSI_TXT.info}</a>
-        </div>
+        </div>`;
+    return `
+    <div class="evento-card${svolto ? ' evento-card-svolto' : ''}" id="evento-item-${ev.id}">
+      ${ev.immagine ? `<img src="${ev.immagine}" alt="${ev.titolo}">` : ''}
+      <div class="evento-card-body">
+        <span class="agenda-badge agenda-badge-evento">${CORSI_TXT.evento}</span>${badgeSvolto}
+        <h3>${ev.titolo}</h3>
+        <p>${ev.descrizione}</p>
+        <span class="agenda-meta">${CORSI_GIORNI[ev.dateObj.getDay()]} ${ev.dateObj.getDate()} ${CORSI_MESI[ev.dateObj.getMonth()]}${ev.orario ? ' · ' + ev.orario : ''}</span>${bottone}
       </div>
-    </div>
-  `).join('')}</div>`;
+    </div>`;
+  };
+
+  wrap.innerHTML = (prossimi.length ? '' : vuoto) + `<div class="eventi-grid">${eventi.map(card).join('')}</div>`;
 
   if (typeof initWhatsAppLinks === 'function') initWhatsAppLinks();
 }
