@@ -17,6 +17,86 @@
 // ============================================
 const CORSI_EVENTI = [
   {
+    id: 'blsd-2026-12-10',
+    tipo: 'corso',
+    titolo: 'Corso BLSD + PBLSD',
+    titolo_en: 'BLSD + PBLSD Course',
+    data: '2026-12-10',
+    orario: '15:00',
+    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00.",
+    descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
+  },
+  {
+    id: 'blsd-2026-12-19',
+    tipo: 'corso',
+    titolo: 'Corso BLSD + PBLSD',
+    titolo_en: 'BLSD + PBLSD Course',
+    data: '2026-12-19',
+    orario: '9:00',
+    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00.",
+    descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
+  },
+  {
+    id: 'blsd-2027-01-14',
+    tipo: 'corso',
+    titolo: 'Corso BLSD + PBLSD',
+    titolo_en: 'BLSD + PBLSD Course',
+    data: '2027-01-14',
+    orario: '15:00',
+    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00.",
+    descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
+  },
+  {
+    id: 'blsd-2027-01-30',
+    tipo: 'corso',
+    titolo: 'Corso BLSD + PBLSD',
+    titolo_en: 'BLSD + PBLSD Course',
+    data: '2027-01-30',
+    orario: '9:00',
+    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00.",
+    descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
+  },
+  {
+    id: 'blsd-2027-02-11',
+    tipo: 'corso',
+    titolo: 'Corso BLSD + PBLSD',
+    titolo_en: 'BLSD + PBLSD Course',
+    data: '2027-02-11',
+    orario: '15:00',
+    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00.",
+    descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
+  },
+  {
+    id: 'blsd-2027-02-27',
+    tipo: 'corso',
+    titolo: 'Corso BLSD + PBLSD',
+    titolo_en: 'BLSD + PBLSD Course',
+    data: '2027-02-27',
+    orario: '9:00',
+    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00.",
+    descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
+  },
+  {
+    id: 'blsd-2027-03-11',
+    tipo: 'corso',
+    titolo: 'Corso BLSD + PBLSD',
+    titolo_en: 'BLSD + PBLSD Course',
+    data: '2027-03-11',
+    orario: '15:00',
+    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00.",
+    descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
+  },
+  {
+    id: 'blsd-2027-03-27',
+    tipo: 'corso',
+    titolo: 'Corso BLSD + PBLSD',
+    titolo_en: 'BLSD + PBLSD Course',
+    data: '2027-03-27',
+    orario: '9:00',
+    descrizione: "Formazione sulle manovre di rianimazione cardiopolmonare e sull'utilizzo del defibrillatore. Quota di partecipazione € 60,00.",
+    descrizione_en: "Training in cardiopulmonary resuscitation and in the use of the defibrillator. Participation fee € 60.00."
+  },
+  {
     id: 'blsd-2026-11-27',
     tipo: 'corso',
     titolo: 'Corso BLSD + PBLSD',
